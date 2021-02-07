@@ -19,7 +19,7 @@ import { DummyTestComponent } from '../../../../__mocks__/DummyComponent';
 import { NavigationEffects } from './navigation.effects';
 import { NavigationActions } from '../actions';
 
-describe('CheckoutComponent', () => {
+describe('NavigationEffects', () => {
   const routerEventSubject: Subject<any> = new Subject();
   const routerMock = {
     navigate: jest.fn(),

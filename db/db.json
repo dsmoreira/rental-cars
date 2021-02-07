@@ -1,0 +1,31 @@
+{
+  "vehicles": [
+    {
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    }
+  ]
+}
