@@ -24,6 +24,8 @@ module.exports = {
     "!src/app/**/*.module.ts",
     "!src/app/**/*.array.ts",
     "!src/app/**/*.model.ts",
+    "!src/app/**/*.actions.ts",
+    "!src/app/**/store/**/index.ts",
     "!src/app/fragmentTypes.ts"
   ],
   coverageThreshold: {
