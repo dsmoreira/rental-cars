@@ -26,6 +26,14 @@ module.exports = {
     "!src/app/**/*.model.ts",
     "!src/app/fragmentTypes.ts"
   ],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
   modulePaths: ['<rootDir>/dist'],
   transformIgnorePatterns: ['node_modules/(?!@ngrx)'],
   snapshotSerializers: [
