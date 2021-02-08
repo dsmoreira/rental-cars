@@ -12,8 +12,8 @@ import { ConfirmDialogService } from '../../../../core/services/confirm-dialog.s
 import { DummyTestComponent } from '../../../../../../__mocks__/DummyComponent';
 import { NavigationActions } from '../../../../store/actions';
 import { NotificationService } from '../../../../core/services/notification.service';
-import Rental from '../../../checkout/store/models/rental';
-import Vehicle from '../../../home/store/models/vehicle';
+import { Rental } from '../../../checkout/store/models/rental';
+import { Vehicle } from '../../../home/store/models/vehicle';
 
 const vehicle: Vehicle = {
   id: '95ef282b-4378-4447-bfe6-bc362184ca66',
@@ -38,6 +38,7 @@ const initialState = {
   auth: {
     token: '',
     name: '',
+    userId: '',
   },
 };
 
@@ -319,7 +320,7 @@ describe('CheckoutEffects', () => {
 
     effects.saveRentalSuccess$.subscribe((result) => {
       expect(result).toMatchObject(
-        NavigationActions.navigationGo({ payload: { path: ['/book'] } })
+        NavigationActions.navigationGo({ payload: { path: ['/books'] } })
       );
       done();
     });

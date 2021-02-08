@@ -1,4 +1,4 @@
-export default interface Rental {
+export interface Rental {
   vehicleId: string;
   hourlyValue: number;
   hours: number;

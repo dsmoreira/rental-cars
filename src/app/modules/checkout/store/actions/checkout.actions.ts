@@ -1,8 +1,8 @@
 import { createAction, props } from '@ngrx/store';
 
-import AppError from '../../../../core/models/app-error';
-import Rental from '../models/rental';
-import Vehicle from '../../../home/store/models/vehicle';
+import { AppError } from '../../../../core/models/app-error';
+import { Rental } from '../models/rental';
+import { Vehicle } from '../../../home/store/models/vehicle';
 
 export const changeVehicle = createAction(
   '[Checkout] Change vehicle',
@@ -45,6 +45,6 @@ export const saveRental = createAction(
 export const saveRentalSuccess = createAction('[Checkout] Save rental success');
 
 export const saveRentalError = createAction(
-  '[Checkout] Save rental',
+  '[Checkout] Save rental error',
   props<{ error: AppError }>()
 );

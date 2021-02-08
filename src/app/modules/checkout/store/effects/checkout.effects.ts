@@ -9,7 +9,7 @@ import { CheckoutService } from '../../services/checkout.service';
 import { ConfirmDialogService } from '../../../../core/services/confirm-dialog.service';
 import { NavigationActions } from '../../../../store/actions';
 import { NotificationService } from '../../../../core/services/notification.service';
-import Rental from '../models/rental';
+import { Rental } from '../models/rental';
 import { selectIsLogged } from '../../../../store/selectors/auth.selector';
 import { selectRental } from '../selectors/checkout.selector';
 
@@ -113,7 +113,7 @@ export class CheckoutEffects {
     return this.actions$.pipe(
       ofType(CheckoutActions.saveRentalSuccess),
       map((result) =>
-        NavigationActions.navigationGo({ payload: { path: ['/book'] } })
+        NavigationActions.navigationGo({ payload: { path: ['/books'] } })
       )
     );
   });

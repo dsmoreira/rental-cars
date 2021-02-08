@@ -1,4 +1,4 @@
-export default interface Vehicle {
+export interface Vehicle {
   id: string;
   make: string;
   model: string;

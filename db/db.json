@@ -30,5 +30,34 @@
       "trunkCapacity": "450 litro",
       "category": "luxo"
     }
+  ],
+  "books": [
+    {
+      "id": "20504927-4fa6-44e3-b0ab-e8e96424e75c",
+      "vehicleId": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "userId": "8d57964d-7fb5-4b6d-b4c9-f0a9e3fe4e15",
+      "hours": 30,
+      "value": 390.0,
+      "licensePlate": "QUR1293",
+      "date": "2020-03-05T09:00:00.000"
+    },
+    {
+      "id": "26022ee7-aa7e-49a3-bfb5-6f3f463e4a68",
+      "vehicleId": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "userId": "8d57964d-7fb5-4b6d-b4c9-f0a9e3fe4e15",
+      "hours": 20,
+      "value": 600.0,
+      "licensePlate": "PWR2601",
+      "date": "2020-03-15T09:00:00.000"
+    }
+  ],
+  "user": [
+    {
+      "id": "8d57964d-7fb5-4b6d-b4c9-f0a9e3fe4e15",
+      "cpf": "78296364000",
+      "password": "a1s2d3A!S@D#",
+      "name": "Daniel Silva Moreira",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    }
   ]
 }
