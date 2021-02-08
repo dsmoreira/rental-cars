@@ -10,7 +10,7 @@ const vehicle: Vehicle = {
   hourlyValue: 20.0,
   fuel: ['gasolina", "álcool'],
   trunkCapacity: '350 litro',
-  category: 'completo'
+  category: 'completo',
 };
 
 describe('CheckoutReducer', () => {
@@ -34,8 +34,9 @@ describe('CheckoutReducer', () => {
         vehicleId: vehicle.id,
         hourlyValue: vehicle.hourlyValue,
         hours: 1,
-        value: vehicle.hourlyValue
-      }
+        value: vehicle.hourlyValue,
+        date: null,
+      },
     };
 
     const action = CheckoutActions.changeVehicle({ vehicle });
@@ -52,7 +53,8 @@ describe('CheckoutReducer', () => {
       vehicleId: vehicle.id,
       hourlyValue: vehicle.hourlyValue,
       hours: 1,
-      value: vehicle.hourlyValue
+      value: vehicle.hourlyValue,
+      date: null,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
@@ -60,13 +62,37 @@ describe('CheckoutReducer', () => {
         vehicleId: vehicle.id,
         hourlyValue: vehicle.hourlyValue,
         hours: 1,
-        value: vehicle.hourlyValue
+        value: vehicle.hourlyValue,
+        date: null,
       },
       loading: false,
-      nextRental: null
+      nextRental: null,
     };
 
     const action = CheckoutActions.confirmChangeVehicle();
+
+    const state = CheckoutReducer.reducer(initialState, action);
+
+    expect(state).toMatchObject(newState);
+  });
+
+  it('ao rejeitar alteração veículo não deve ser trocado e o veículo que estava aguardando deve ser apagado', () => {
+    const initialState = { ...CheckoutReducer.initialState };
+
+    initialState.nextRental = {
+      vehicleId: vehicle.id,
+      hourlyValue: vehicle.hourlyValue,
+      hours: 1,
+      value: vehicle.hourlyValue,
+      date: null,
+    };
+
+    const newState: CheckoutReducer.CheckoutState = {
+      ...initialState,
+      nextRental: null,
+    };
+
+    const action = CheckoutActions.rejectChangeVehicle();
 
     const state = CheckoutReducer.reducer(initialState, action);
 
@@ -80,7 +106,8 @@ describe('CheckoutReducer', () => {
       vehicleId: vehicle.id,
       hourlyValue: vehicle.hourlyValue,
       hours: 1,
-      value: vehicle.hourlyValue
+      value: vehicle.hourlyValue,
+      date: null,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
@@ -88,10 +115,11 @@ describe('CheckoutReducer', () => {
         vehicleId: vehicle.id,
         hourlyValue: vehicle.hourlyValue,
         hours: 2,
-        value: 2 * vehicle.hourlyValue
+        value: 2 * vehicle.hourlyValue,
+        date: null,
       },
       loading: false,
-      nextRental: null
+      nextRental: null,
     };
 
     const action = CheckoutActions.increaseHours();
@@ -108,7 +136,8 @@ describe('CheckoutReducer', () => {
       vehicleId: vehicle.id,
       hourlyValue: vehicle.hourlyValue,
       hours: 2,
-      value: 2 * vehicle.hourlyValue
+      value: 2 * vehicle.hourlyValue,
+      date: null,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
@@ -116,13 +145,36 @@ describe('CheckoutReducer', () => {
         vehicleId: vehicle.id,
         hourlyValue: vehicle.hourlyValue,
         hours: 1,
-        value: vehicle.hourlyValue
+        value: vehicle.hourlyValue,
+        date: null,
       },
       loading: false,
-      nextRental: null
+      nextRental: null,
     };
 
-    const action = CheckoutActions.decreaseHours();
+    const action = CheckoutActions.confirmDecreaseHours();
+
+    const state = CheckoutReducer.reducer(initialState, action);
+
+    expect(state).toMatchObject(newState);
+  });
+
+  it('ao confirmar a remoção do veículo o mesmo deve voltar ao estado inicial', () => {
+    const initialState = { ...CheckoutReducer.initialState };
+
+    initialState.rental = {
+      vehicleId: vehicle.id,
+      hourlyValue: vehicle.hourlyValue,
+      hours: 1,
+      value: vehicle.hourlyValue,
+      date: null,
+    };
+
+    const newState: CheckoutReducer.CheckoutState = {
+      ...CheckoutReducer.initialState,
+    };
+
+    const action = CheckoutActions.confirmRemoveVehicle();
 
     const state = CheckoutReducer.reducer(initialState, action);
 
