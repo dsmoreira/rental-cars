@@ -2,7 +2,7 @@ import { vehicles } from '../../../../../../__mocks__/DbMock';
 import { VehicleActions } from '../actions';
 import { VehicleReducer } from './';
 
-describe('VehicleReduce', () => {
+describe('VehicleReducer', () => {
   it('deve retornar um estado inicial', () => {
     const { initialState } = VehicleReducer;
     const action = {

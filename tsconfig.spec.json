@@ -11,7 +11,8 @@
     "emitDecoratorMetadata": true,
     "allowJs": true,
     "target": "es2015",
-    "lib": ["es2018", "es2015"]
+    "lib": ["es2018", "es2015"],
+    "resolveJsonModule": true
   },
   "files": ["src/polyfills.ts"],
   "include": ["node_modules/**/*.d.ts", "src/**/*.spec.ts", "setupJest.ts"]
