@@ -2,7 +2,7 @@
 <app-loading *ngIf="loading$ | async" data-testid="home-loading"></app-loading>
 <div class="home-wrapper">
   <div
-    *ngIf="(loading$ | async) === (false | null | undefined)"
+    *ngIf="(loading$ | async) === false"
     class="home-vehicle-list"
     data-testid="vehicle-list"
   >
