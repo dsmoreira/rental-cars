@@ -1,0 +1,13 @@
+.vehicle-card-wrapper {
+  display: flex;
+  padding: 1rem;
+  min-width: 280px;
+  min-height: 230px;
+
+  & .vehicle-card-info {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    width: 100%;
+  }
+}

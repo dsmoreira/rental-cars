@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
-import Rental from '../models/rental';
+import { Rental } from '../models/rental';
 import { CheckoutActions } from '../actions/index';
 
 const inicialRental: Rental = {

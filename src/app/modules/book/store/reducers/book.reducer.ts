@@ -4,7 +4,7 @@ import { BookActions } from '../actions/index';
 import { Book } from '../models/book';
 
 export interface BookState {
-  books: Array<Book>;
+  books: Book[];
   loading: boolean;
 }
 

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NavigationEffects } from './store/effects/navigation.effects';
 import { VehicleEffects } from './modules/home/store/effects/vehicle.effects';
 import { VehicleReducer } from './modules/home/store/reducers';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { VehicleReducer } from './modules/home/store/reducers';
     EffectsModule.forRoot([NavigationEffects, VehicleEffects]),
     HttpClientModule,
     StoreModule.forRoot({ vehicle: VehicleReducer.reducer }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

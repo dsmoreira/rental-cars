@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import AppError from '../models/app-error';
+import { AppError } from '../models/app-error';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationService {

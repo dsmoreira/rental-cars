@@ -2,7 +2,6 @@ import { AuthActions } from '../actions';
 import { AuthReducer } from './';
 import { LoginInfo } from '../models/login-info';
 import { LoginResult } from '../models/login-result';
-import { loginError } from '../actions/auth.actions';
 
 const loginInfo: LoginInfo = {
   userName: '78296364000',

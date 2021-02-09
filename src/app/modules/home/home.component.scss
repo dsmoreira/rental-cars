@@ -1,0 +1,21 @@
+.home-wrapper {
+  padding: 2rem;
+
+  & .home-vehicle-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & .home-vehicle-basic {
+      flex-grow: 1;
+    }
+
+    & .home-vehicle-complete {
+      flex-grow: 1;
+    }
+
+    & .home-vehicle-lux {
+      flex-grow: 1;
+    }
+  }
+}

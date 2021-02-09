@@ -7,7 +7,7 @@ export const getBooks = createAction('[Book] Get');
 
 export const getBooksSuccess = createAction(
   '[Book] Get success',
-  props<{ books: Array<Book> }>()
+  props<{ books: Book[] }>()
 );
 
 export const getBooksError = createAction(

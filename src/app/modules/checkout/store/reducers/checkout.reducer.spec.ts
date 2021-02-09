@@ -1,6 +1,6 @@
 import { CheckoutActions } from '../actions';
 import { CheckoutReducer } from './';
-import Vehicle from '../../../home/store/models/vehicle';
+import { Vehicle } from '../../../home/store/models/vehicle';
 
 const vehicle: Vehicle = {
   id: '95ef282b-4378-4447-bfe6-bc362184ca66',

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
-import Vehicle from '../store/models/vehicle';
+import { Vehicle } from '../store/models/vehicle';
 
 @Injectable({ providedIn: 'root' })
 export class VehicleService {
@@ -11,7 +11,7 @@ export class VehicleService {
 
   constructor(private http: HttpClient) {}
 
-  public availableVehicles(): Observable<Array<Vehicle>> {
-    return this.http.get<Array<Vehicle>>(`${this.apiUrl}/vehicles`);
+  public availableVehicles(): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${this.apiUrl}/vehicles`);
   }
 }

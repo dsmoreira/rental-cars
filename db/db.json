@@ -29,6 +29,286 @@
       "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "450 litro",
       "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "make": "Ford",
+      "model": "Eco Sport SE",
+      "year": 2020,
+      "hourlyValue": 20.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "350 litro",
+      "category": "completo"
+    },
+    {
+      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "make": "Chevrolet",
+      "model": "Onix",
+      "year": 2020,
+      "hourlyValue": 13.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "270 litro",
+      "category": "básico"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
+    },
+    {
+      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "make": "Toyota",
+      "model": "Corolla GLI",
+      "year": 2020,
+      "hourlyValue": 30.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "450 litro",
+      "category": "luxo"
     }
   ],
   "books": [

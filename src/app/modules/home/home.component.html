@@ -1,1 +1,38 @@
-<button [routerLink]="['/checkout']">Checkout</button>
+<app-header></app-header>
+<app-loading *ngIf="loading$ | async" data-testid="home-loading"></app-loading>
+<div class="home-wrapper">
+  <div
+    *ngIf="(loading$ | async) === (false | null | undefined)"
+    class="home-vehicle-list"
+    data-testid="vehicle-list"
+  >
+    <div class="home-vehicle-basic" data-testid="home-vehicles-basic">
+      Básico
+      <app-vehicle-card
+        class="home-vehicle-item"
+        *ngFor="let vehicle of basicVehicles$ | async"
+        data-testid="home-vehicle-item-basic"
+        [vehicle]="vehicle"
+      ></app-vehicle-card>
+    </div>
+    <div class="home-vehicle-complete" data-testid="home-vehicles-complete">
+      Completo
+      <app-vehicle-card
+        class="home-vehicle-item"
+        *ngFor="let vehicle of completeVehicles$ | async"
+        data-testid="home-vehicle-item-complete"
+        [vehicle]="vehicle"
+      ></app-vehicle-card>
+    </div>
+    <div class="home-vehicle-lux" data-testid="home-vehicles-lux">
+      Luxo
+      <app-vehicle-card
+        class="home-vehicle-item"
+        *ngFor="let vehicle of luxVehicles$ | async"
+        data-testid="home-vehicle-item-lux"
+        [vehicle]="vehicle"
+      ></app-vehicle-card>
+    </div>
+    <div></div>
+  </div>
+</div>

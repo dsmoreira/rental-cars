@@ -1,10 +1,10 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
-import Vehicle from '../models/vehicle';
+import { Vehicle } from '../models/vehicle';
 import { VehicleActions } from '../actions/index';
 
 export interface VehicleState {
-  vehicles: Array<Vehicle>;
+  vehicles: Vehicle[];
   loading: boolean;
 }
 

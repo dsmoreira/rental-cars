@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@import "./themes/palettes.scss";
+
+@include mat-core();
+
+$rental-cars-primary: mat-palette($primary-palette);
+$rental-cars-accent: mat-palette($secondary-palette);
+$rental-cars-warn: mat-palette($mat-red);
+
+$rental-cars-theme: mat-light-theme(
+  (
+    color: (
+      primary: $rental-cars-primary,
+      accent: $rental-cars-accent,
+      warn: $rental-cars-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($rental-cars-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

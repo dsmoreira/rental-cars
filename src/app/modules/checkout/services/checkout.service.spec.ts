@@ -8,7 +8,7 @@ import { render, RenderResult } from '@testing-library/angular';
 import { CheckoutService } from './checkout.service';
 import { DummyTestComponent } from '../../../../../__mocks__/DummyComponent';
 import { environment } from '../../../../environments/environment';
-import Rental from '../store/models/rental';
+import { Rental } from '../store/models/rental';
 
 const rental: Rental = {
   vehicleId: '368c9bce-b2f9-41e7-a924-f4643bac4f89',

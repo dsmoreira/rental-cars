@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
-import Rental from '../store/models/rental';
+import { Rental } from '../store/models/rental';
 
 @Injectable({ providedIn: 'root' })
 export class CheckoutService {

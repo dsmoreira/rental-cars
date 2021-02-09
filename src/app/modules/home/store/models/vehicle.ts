@@ -4,7 +4,7 @@ export interface Vehicle {
   model: string;
   year: number;
   hourlyValue: number;
-  fuel: Array<string>;
+  fuel: string[];
   trunkCapacity: string;
   category: string;
 }
