@@ -44,4 +44,34 @@ export class AuthEffects {
       tap(({ error }) => this.notificationService.notifyError(error))
     );
   });
+
+  signup$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthActions.signup),
+      mergeMap(({ user }) =>
+        this.authService.signup(user).pipe(
+          map(() => AuthActions.signupSuccess()),
+          catchError((error) => {
+            return of(AuthActions.signupError({ error: { message: error } }));
+          })
+        )
+      )
+    );
+  });
+
+  signupSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthActions.signupSuccess),
+      map(() =>
+        NavigationActions.navigationGo({ payload: { path: ['/login'] } })
+      )
+    );
+  });
+
+  signupError$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthActions.signupError),
+      tap(({ error }) => this.notificationService.notifyError(error))
+    );
+  });
 }

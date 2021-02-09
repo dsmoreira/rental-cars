@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { LoginInfo } from '../../store/models/login-info';
 import { LoginResult } from '../../store/models/login-result';
+import { User } from '../../store/models/user';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -13,7 +14,11 @@ export class AuthService {
 
   login(loginInfo: LoginInfo): Observable<LoginResult> {
     return this.httpClient.get<LoginResult>(
-      `${this.apiUrl}/user?cpf=${loginInfo.userName}&password=${loginInfo.password}`
+      `${this.apiUrl}/user?document=${loginInfo.userName}&password=${loginInfo.password}`
     );
+  }
+
+  signup(user: User): Observable<User> {
+    return this.httpClient.post<User>(`${this.apiUrl}/user`, user);
   }
 }

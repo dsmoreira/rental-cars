@@ -9,10 +9,23 @@ import { AuthService } from './auth.service';
 import { DummyTestComponent } from '../../../../__mocks__/DummyComponent';
 import { environment } from '../../../environments/environment';
 import { LoginInfo } from '../../store/models/login-info';
+import { User } from '../../store/models/user';
 
 const loginInfo: LoginInfo = {
   userName: '78296364000',
   password: 'a1s2d3A!S@D#',
+};
+
+const user: User = {
+  document: '78296364000',
+  name: 'Daniel Silva Moreira',
+  birthdate: '1989-03-03',
+  zipcode: '30000-000',
+  street: 'Av do Contorno',
+  number: 1500,
+  complement: 'Sala 1220',
+  city: 'Belo Horizonte',
+  state: 'MG',
 };
 
 describe('AuthService', () => {
@@ -41,8 +54,8 @@ describe('AuthService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('deve efetuar a chamada de login', (done) => {
-    const url = `${environment.apiUrl}/user?cpf=${loginInfo.userName}&password=${loginInfo.password}`;
+  it('deve criar a chamada de login', (done) => {
+    const url = `${environment.apiUrl}/user?document=${loginInfo.userName}&password=${loginInfo.password}`;
 
     service.login(loginInfo).subscribe((resultado) => {
       done();
@@ -50,6 +63,19 @@ describe('AuthService', () => {
 
     const req = httpTestingController.expectOne(url);
     expect(req.request.method).toBe('GET');
+
+    req.flush({});
+  });
+
+  it('deve criar a chamada de signup', (done) => {
+    const url = `${environment.apiUrl}/user`;
+
+    service.signup(user).subscribe((resultado) => {
+      done();
+    });
+
+    const req = httpTestingController.expectOne(url);
+    expect(req.request.method).toBe('POST');
 
     req.flush({});
   });
