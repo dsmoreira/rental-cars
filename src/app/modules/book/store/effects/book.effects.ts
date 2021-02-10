@@ -5,6 +5,7 @@ import {
   filter,
   map,
   mergeMap,
+  take,
   tap,
 } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
@@ -37,7 +38,7 @@ export class BookEffects {
   getBooks$ = createEffect(() =>
     this.actions$.pipe(
       ofType(BookActions.getBooks),
-      mergeMap(() => this.store.select(selectUserId)),
+      mergeMap(() => this.store.select(selectUserId).pipe(take(1))),
       mergeMap((userId) =>
         this.bookService.getBooks(userId).pipe(
           map((books) => BookActions.getBooksSuccess({ books })),

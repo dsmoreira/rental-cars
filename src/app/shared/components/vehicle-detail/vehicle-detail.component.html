@@ -1,1 +1,10 @@
-<p>vehicle-detail works!</p>
+<div *ngIf="vehicle" class="vehicle-details-wrapper">
+  <label>Marca: {{ vehicle.make }}</label>
+  <label>Modelo: {{ vehicle.model }}</label>
+  <label>Ano: {{ vehicle.year }}</label>
+  <label>Valor/Hora: {{ vehicle.hourlyValue }}</label>
+  <label>Combustível: {{ vehicle.fuel }}</label>
+  <label>Capacidade porta malas: {{ vehicle.trunkCapacity }}</label>
+  <label>Categoria: {{ vehicle.category }}</label>
+  <img src="{{ vehicle.image }}" />
+</div>

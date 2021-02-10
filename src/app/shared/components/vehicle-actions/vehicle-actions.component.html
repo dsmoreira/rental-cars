@@ -1,0 +1,34 @@
+<div *ngIf="vehicle" data-testid="vehicle-actions">
+  <div *ngIf="rental$ | async as rental">
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="rental?.vehicleId != vehicle.id"
+      data-testid="vehicle-actions-select-btn"
+      (click)="selectVehicle()"
+    >
+      Selecionar
+    </button>
+    <div *ngIf="rental?.vehicleId == vehicle.id">
+      <button
+        mat-mini-fab
+        color="warn"
+        (click)="decreaseHours()"
+        data-testid="vehicle-actions-remove-hour"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+      <label data-testid="vehicle-actions-hours"
+        >{{ rental.hours }} horas</label
+      >
+      <button
+        mat-mini-fab
+        color="primary"
+        (click)="increaseHours()"
+        data-testid="vehicle-actions-add-hour"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

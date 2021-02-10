@@ -4,6 +4,7 @@ import { ComponentFixture } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { render, RenderResult } from '@testing-library/angular';
 
+import { CheckoutResumeModule } from '../../shared/components/checkout-resume/checkout-resume.module';
 import { HeaderModule } from '../../core/layout/header/header.module';
 import { HomeComponent } from './home.component';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
@@ -29,6 +30,7 @@ describe('HomeComponent', () => {
     renderResult = await render(HomeComponent, {
       imports: [
         BrowserModule,
+        CheckoutResumeModule,
         CommonModule,
         HeaderModule,
         LoadingModule,

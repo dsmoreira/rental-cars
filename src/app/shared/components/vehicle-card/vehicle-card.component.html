@@ -1,5 +1,6 @@
 <div class="vehicle-card-wrapper">
   <div *ngIf="vehicle" class="vehicle-card-info">
-    <label>{{ vehicle.model }}</label>
+    <app-vehicle-detail [vehicle]="vehicle"></app-vehicle-detail>
+    <app-vehicle-actions [vehicle]="vehicle"></app-vehicle-actions>
   </div>
 </div>

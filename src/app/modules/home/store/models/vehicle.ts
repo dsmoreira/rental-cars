@@ -7,4 +7,5 @@ export interface Vehicle {
   fuel: string[];
   trunkCapacity: string;
   category: string;
+  image?: string;
 }

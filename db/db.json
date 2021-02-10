@@ -2,331 +2,164 @@
   "vehicles": [
     {
       "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
+      "make": "Fiat",
+      "model": "Uno 1.0",
+      "year": 2020,
+      "hourlyValue": 10.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "150 litros",
+      "category": "básico",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
+    },
+    {
+      "id": "f03022be-2892-4a77-bc01-f0d5fdbe12ae",
+      "make": "Fiat",
+      "model": "Mobi 1.0",
+      "year": 2020,
+      "hourlyValue": 10.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "160 litros",
+      "category": "básico",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png"
+    },
+    {
+      "id": "7896fe92-2ea3-47c6-95d3-17d821d51dfe",
+      "make": "Renault",
+      "model": "Kwid 1.0",
+      "year": 2020,
+      "hourlyValue": 10.0,
+      "fuel": ["gasolina", "álcool"],
+      "trunkCapacity": "170 litros",
+      "category": "básico",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/KWID.png"
+    },
+    {
+      "id": "9e74e1e3-aad4-4e22-ae10-0b7c0affbff8",
+      "make": "Renault",
+      "model": "Logan 1.0",
       "year": 2020,
       "hourlyValue": 20.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
+      "trunkCapacity": "320 litros",
+      "category": "completo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/LOGN.png"
     },
     {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
+      "id": "6abca3ef-3d32-4a1c-9814-948dc8f9c458",
+      "make": "GM",
+      "model": "Prisma 1.0",
       "year": 2020,
       "hourlyValue": 20.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
+      "trunkCapacity": "330 litros",
+      "category": "completo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/PRIC.png"
     },
     {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
+      "id": "834f7d42-816c-42e2-bc38-929a6ac67ae2",
+      "make": "Nissan",
+      "model": "Versa 1.0",
       "year": 2020,
       "hourlyValue": 20.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
+      "trunkCapacity": "350 litros",
+      "category": "completo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/VESX.png"
     },
     {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
+      "id": "906f4da7-2fec-4476-bc62-a496107db3b2",
       "make": "Ford",
-      "model": "Eco Sport SE",
+      "model": "Ka Sedan 1.0",
       "year": 2020,
       "hourlyValue": 20.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
+      "trunkCapacity": "335 litros",
+      "category": "completo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/KAS1.png"
     },
     {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
+      "id": "07327263-d00a-44ec-b713-9bd30d6ccc78",
+      "make": "Hyundai",
+      "model": "HB20S 1.0",
       "year": 2020,
       "hourlyValue": 20.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
+      "trunkCapacity": "350 litros",
+      "category": "completo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/HB2C.png"
     },
     {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
+      "id": "197e12d8-31f0-48a5-a5c2-93e31eaa1fa5",
+      "make": "GM",
+      "model": "Onix Plus 1.0",
       "year": 2020,
       "hourlyValue": 20.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
+      "trunkCapacity": "350 litros",
+      "category": "completo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/ONIT.png"
     },
     {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "id": "88b08df1-4ca7-470f-b006-3f36e18e1c61",
       "make": "Toyota",
       "model": "Corolla GLI",
       "year": 2020,
       "hourlyValue": 30.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
+      "trunkCapacity": "380 litros",
+      "category": "luxo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/CORO.png"
     },
     {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
-      "year": 2020,
-      "hourlyValue": 20.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
-    },
-    {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
+      "id": "ce34f731-9dc2-4a27-84c0-7a1dfa2539f5",
+      "make": "GM",
+      "model": "Cruze",
       "year": 2020,
       "hourlyValue": 30.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
+      "trunkCapacity": "370 litros",
+      "category": "luxo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/CRUT.png"
     },
     {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
-      "year": 2020,
-      "hourlyValue": 20.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
-    },
-    {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
+      "id": "946a9443-f759-40de-a64b-c3288e4b22c9",
+      "make": "VW",
+      "model": "Jetta",
       "year": 2020,
       "hourlyValue": 30.0,
       "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
+      "trunkCapacity": "380 litros",
+      "category": "luxo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/JETA.png"
     },
     {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
+      "id": "06259390-c318-4c47-9967-a64d4d746766",
+      "make": "Jeep",
+      "model": "Compass",
       "year": 2020,
-      "hourlyValue": 20.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
-    },
-    {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "95ef282b-4378-4447-bfe6-bc362184ca66",
-      "make": "Ford",
-      "model": "Eco Sport SE",
-      "year": 2020,
-      "hourlyValue": 20.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "350 litro",
-      "category": "completo"
-    },
-    {
-      "id": "2bde9293-46ed-433a-a00e-60807371ed9b",
-      "make": "Chevrolet",
-      "model": "Onix",
-      "year": 2020,
-      "hourlyValue": 13.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "270 litro",
-      "category": "básico"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
-    },
-    {
-      "id": "0e4efb89-854f-42ef-ae0a-1439014f3025",
-      "make": "Toyota",
-      "model": "Corolla GLI",
-      "year": 2020,
-      "hourlyValue": 30.0,
-      "fuel": ["gasolina", "álcool"],
-      "trunkCapacity": "450 litro",
-      "category": "luxo"
+      "hourlyValue": 35.0,
+      "fuel": ["diesel"],
+      "trunkCapacity": "380 litros",
+      "category": "luxo",
+      "image": "https://www.localiza.com/brasil-site/geral/Frota/COMP.png"
     }
   ],
   "books": [
     {
-      "id": "20504927-4fa6-44e3-b0ab-e8e96424e75c",
-      "vehicleId": "2bde9293-46ed-433a-a00e-60807371ed9b",
+      "id": "a98e5288-3be1-4076-b2e3-d92bb6c842b1",
+      "vehicleId": "95ef282b-4378-4447-bfe6-bc362184ca66",
       "userId": "8d57964d-7fb5-4b6d-b4c9-f0a9e3fe4e15",
       "hours": 30,
-      "value": 390.0,
+      "value": 300.0,
       "licensePlate": "QUR1293",
       "date": "2020-03-05T09:00:00.000"
     },
     {
       "id": "26022ee7-aa7e-49a3-bfb5-6f3f463e4a68",
-      "vehicleId": "0e4efb89-854f-42ef-ae0a-1439014f3025",
+      "vehicleId": "06259390-c318-4c47-9967-a64d4d746766",
       "userId": "8d57964d-7fb5-4b6d-b4c9-f0a9e3fe4e15",
       "hours": 20,
-      "value": 600.0,
+      "value": 700.0,
       "licensePlate": "PWR2601",
       "date": "2020-03-15T09:00:00.000"
     }

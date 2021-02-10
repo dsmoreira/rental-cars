@@ -1,6 +1,6 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { mergeMap, map, tap, catchError } from 'rxjs/operators';
+import { mergeMap, map, tap, catchError, take } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Store } from '@ngrx/store';
 
@@ -27,9 +27,10 @@ export class CheckoutEffects {
     this.actions$.pipe(
       ofType(CheckoutActions.changeVehicle),
       mergeMap(() =>
-        this.store
-          .select(selectRental)
-          .pipe(map((rental: Rental) => !!rental.vehicleId))
+        this.store.select(selectRental).pipe(
+          take(1),
+          map((rental: Rental) => !!rental.vehicleId)
+        )
       ),
       map((result) => {
         return result
@@ -59,9 +60,10 @@ export class CheckoutEffects {
     this.actions$.pipe(
       ofType(CheckoutActions.decreaseHours),
       mergeMap(() =>
-        this.store
-          .select(selectRental)
-          .pipe(map((rental: Rental) => rental.hours === 1))
+        this.store.select(selectRental).pipe(
+          take(1),
+          map((rental: Rental) => rental.hours === 1)
+        )
       ),
       map((result) => {
         return result
@@ -91,7 +93,7 @@ export class CheckoutEffects {
     return this.actions$.pipe(
       ofType(CheckoutActions.saveRental),
       tap(({ rental }) => (currentRental = rental)),
-      mergeMap(() => this.store.select(selectIsLogged)),
+      mergeMap(() => this.store.select(selectIsLogged).pipe(take(1))),
       mergeMap((result) => {
         return result
           ? this.checkoutService.save(currentRental).pipe(
