@@ -55,7 +55,7 @@ describe('AuthService', () => {
   });
 
   it('deve criar a chamada de login', (done) => {
-    const url = `${environment.apiUrl}/user?document=${loginInfo.userName}&password=${loginInfo.password}`;
+    const url = `${environment.apiUrl}/user?document=${loginInfo.userName}`;
 
     service.login(loginInfo).subscribe((resultado) => {
       done();

@@ -13,3 +13,8 @@ export const selectUserId = createSelector(
   selectAuth,
   (auth: AuthState): string => auth.userId
 );
+
+export const selectLoading = createSelector(
+  selectAuth,
+  (auth: AuthState): boolean => auth.loading
+);

@@ -1,7 +1,7 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { mergeMap, map, tap, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { mergeMap, map, tap, catchError, take } from 'rxjs/operators';
+import { EMPTY, of } from 'rxjs';
 
 import { AuthActions, NavigationActions } from '../actions';
 import { AuthService } from '../../core/services/auth.service';
@@ -20,7 +20,20 @@ export class AuthEffects {
       ofType(AuthActions.login),
       mergeMap((action) =>
         this.authService.login(action.loginInfo).pipe(
-          map((result) => AuthActions.loginSuccess({ loginResult: result })),
+          take(1),
+          map((result) =>
+            !!result.length
+              ? AuthActions.loginSuccess({
+                  loginResult: {
+                    id: result[0].id as string,
+                    token: result[0].token as string,
+                    name: result[0].name,
+                  },
+                })
+              : AuthActions.loginError({
+                  error: { message: 'Usuário ou senha inválidos!' },
+                })
+          ),
           catchError((error) => {
             return of(AuthActions.loginError({ error: { message: error } }));
           })
@@ -39,7 +52,8 @@ export class AuthEffects {
   loginError$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AuthActions.loginError),
-      tap(({ error }) => this.notificationService.notifyError(error))
+      tap(({ error }) => this.notificationService.notifyError(error)),
+      map(() => AuthActions.noopAction())
     );
   });
 
@@ -67,7 +81,8 @@ export class AuthEffects {
   signupError$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AuthActions.signupError),
-      tap(({ error }) => this.notificationService.notifyError(error))
+      tap(({ error }) => this.notificationService.notifyError(error)),
+      map(() => AuthActions.noopAction())
     );
   });
 }

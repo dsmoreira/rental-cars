@@ -15,6 +15,21 @@ const routes: Routes = [
         (m) => m.CheckoutModule
       ),
   },
+  {
+    path: 'books',
+    loadChildren: () =>
+      import('./modules/book/book.module').then((m) => m.BookModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./modules/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./modules/signup/signup.module').then((m) => m.SignupModule),
+  },
   { path: '**', redirectTo: '' },
 ];
 

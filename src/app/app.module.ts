@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
+import { AuthEffects } from './store/effects/auth.effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthReducer } from './store/reducers';
@@ -19,7 +20,12 @@ import { VehicleReducer } from './modules/home/store/reducers';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    EffectsModule.forRoot([CheckoutEffects, NavigationEffects, VehicleEffects]),
+    EffectsModule.forRoot([
+      AuthEffects,
+      CheckoutEffects,
+      NavigationEffects,
+      VehicleEffects,
+    ]),
     HttpClientModule,
     StoreModule.forRoot({
       auth: AuthReducer.reducer,

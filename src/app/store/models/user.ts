@@ -8,4 +8,6 @@ export interface User {
   complement: string;
   city: string;
   state: string;
+  id?: string;
+  token?: string;
 }

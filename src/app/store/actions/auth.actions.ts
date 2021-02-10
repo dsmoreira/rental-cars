@@ -28,3 +28,5 @@ export const signupError = createAction(
   '[Auth] Signup error',
   props<{ error: AppError }>()
 );
+
+export const noopAction = createAction('[Auth] No op action');

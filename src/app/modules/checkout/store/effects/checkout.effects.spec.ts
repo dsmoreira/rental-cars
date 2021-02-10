@@ -245,7 +245,7 @@ describe('CheckoutEffects', () => {
 
     effects.saveRental$.subscribe((result) => {
       expect(result).toMatchObject(
-        NavigationActions.navigationGo({ path: ['/auth'] })
+        NavigationActions.navigationGo({ path: ['/login'] })
       );
       done();
     });

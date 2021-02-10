@@ -1,0 +1,35 @@
+<app-loading *ngIf="loading$ | async"></app-loading>
+<div class="main-wrapper gradient-primary">
+  <mat-card class="login-card">
+    <form class="login-form">
+      <mat-card-content class="form-content">
+        <mat-form-field>
+          <input matInput placeholder="Usuário" [formControl]="username" />
+          <mat-error *ngIf="username.hasError('required')">
+            Usuário <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Senha"
+            [formControl]="password"
+          />
+          <mat-error *ngIf="password.hasError('required')">
+            Senha <strong>obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <button
+        *ngIf="(loading$ | async) === false"
+        mat-stroked-button
+        color="primary"
+        class="btn-entrar"
+        (click)="login()"
+      >
+        Entrar
+      </button>
+    </form>
+  </mat-card>
+</div>

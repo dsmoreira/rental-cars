@@ -108,7 +108,7 @@ export class CheckoutEffects {
                 );
               })
             )
-          : of(NavigationActions.navigationGo({ path: ['/auth'] }));
+          : of(NavigationActions.navigationGo({ path: ['/login'] }));
       })
     );
   });

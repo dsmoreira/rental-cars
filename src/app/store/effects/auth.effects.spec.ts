@@ -36,6 +36,9 @@ const user: User = {
   complement: 'Sala 1220',
   city: 'Belo Horizonte',
   state: 'MG',
+  id: '8d57964d-7fb5-4b6d-b4c9-f0a9e3fe4e15',
+  token:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
 };
 
 describe('AuthEffects', () => {
@@ -48,7 +51,7 @@ describe('AuthEffects', () => {
 
   let notificationServiceSpy: jest.SpyInstance;
 
-  let loginMock = of(loginResult);
+  let loginMock = of([user]);
   let signupMock = of(user);
 
   const authServiceMock = {
@@ -92,12 +95,27 @@ describe('AuthEffects', () => {
   });
 
   it('ao efetuar login com sucesso', (done) => {
-    loginMock = of(loginResult);
+    loginMock = of([user]);
 
     actions$ = of(AuthActions.login({ loginInfo }));
 
     effects.login$.subscribe((result) => {
       expect(result).toMatchObject(AuthActions.loginSuccess({ loginResult }));
+      done();
+    });
+  });
+
+  it('ao tentar efetuar e o usuário não for encontrado', (done) => {
+    loginMock = of([]);
+
+    actions$ = of(AuthActions.login({ loginInfo }));
+
+    effects.login$.subscribe((result) => {
+      expect(result).toMatchObject(
+        AuthActions.loginError({
+          error: { message: 'Usuário ou senha inválidos!' },
+        })
+      );
       done();
     });
   });

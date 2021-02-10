@@ -1,0 +1,62 @@
+.main-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  & .login-card {
+    width: 40%;
+
+    & .login-card-header {
+      justify-content: center;
+      padding: 1rem 0rem;
+
+      & ::ng-deep.mat-card-header-text {
+        margin: 0;
+      }
+    }
+
+    & .login-form {
+      padding: 1rem 0.5rem;
+
+      & .form-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      & .btn-entrar {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.login-load {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .main-wrapper {
+    & .login-card {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    & .login-card {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .main-wrapper {
+    & .login-card {
+      width: 85%;
+    }
+  }
+}
