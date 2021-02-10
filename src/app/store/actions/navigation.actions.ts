@@ -18,3 +18,5 @@ export const navigationPerfomed = createAction(
     payload: { params: any; queryParams: any; data: any; path: string };
   }>()
 );
+
+export const navigationEnd = createAction('[Navigation] End');

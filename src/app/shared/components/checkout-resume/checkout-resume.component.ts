@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { Rental } from '../../../modules/checkout/store/models/rental';
 import { selectRental } from '../../../modules/checkout/store/selectors/checkout.selector';
+import { NavigationActions } from '../../../store/actions';
 
 @Component({
   selector: 'app-checkout-resume',
@@ -18,4 +19,10 @@ export class CheckoutResumeComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  checkout(): void {
+    this.store.dispatch(
+      NavigationActions.navigationGo({ payload: { path: ['/checkout'] } })
+    );
+  }
 }

@@ -18,9 +18,8 @@ const vehicle = vehicles[0];
 const diffVehicle = vehicles[1];
 
 const rental: Rental = {
-  vehicleId: vehicle.id,
+  vehicle,
   hours: 4,
-  hourlyValue: vehicle.hourlyValue,
   value: vehicle.hourlyValue * 4,
   date: new Date(Date.now()),
 };

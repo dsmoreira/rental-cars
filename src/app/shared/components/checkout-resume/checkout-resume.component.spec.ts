@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ComponentFixture } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
 import { provideMockStore } from '@ngrx/store/testing';
 import { render, RenderResult } from '@testing-library/angular';
 
@@ -11,7 +12,7 @@ describe('CheckoutResumeComponent', () => {
 
   beforeEach(async () => {
     renderResult = await render(CheckoutResumeComponent, {
-      imports: [BrowserModule],
+      imports: [BrowserModule, MatButtonModule],
       providers: [provideMockStore({})],
     });
     fixture = renderResult.fixture;

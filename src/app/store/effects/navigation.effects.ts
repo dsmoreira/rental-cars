@@ -1,11 +1,12 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ActivationStart, NavigationEnd, Router } from '@angular/router';
-import { debounce, filter, map, tap } from 'rxjs/operators';
+import { debounce, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import { Store } from '@ngrx/store';
 
 import { NavigationActions } from '../actions';
+import { EMPTY, of } from 'rxjs';
 
 @Injectable()
 export class NavigationEffects {
@@ -24,7 +25,8 @@ export class NavigationEffects {
       map((action: any) => action.payload),
       tap(({ path, queryParams, extras }) =>
         this.router.navigate(path, { queryParams, ...extras })
-      )
+      ),
+      mergeMap(() => of(NavigationActions.navigationEnd()))
     )
   );
 

@@ -3,13 +3,13 @@
     <button
       mat-raised-button
       color="primary"
-      *ngIf="rental?.vehicleId != vehicle.id"
+      *ngIf="rental?.vehicle?.id != vehicle.id"
       data-testid="vehicle-actions-select-btn"
       (click)="selectVehicle()"
     >
       Selecionar
     </button>
-    <div *ngIf="rental?.vehicleId == vehicle.id">
+    <div *ngIf="rental?.vehicle?.id == vehicle.id">
       <button
         mat-mini-fab
         color="warn"

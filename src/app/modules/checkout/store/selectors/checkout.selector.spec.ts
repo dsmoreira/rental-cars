@@ -1,10 +1,12 @@
 import { CheckoutState } from '../reducers/checkout.reducer';
 import { selectCheckout, selectRental } from './checkout.selector';
+import { vehicles } from '../../../../../../__mocks__/DbMock';
+
+const vehicle = vehicles[0];
 
 const state: CheckoutState = {
   rental: {
-    vehicleId: '95ef282b-4378-4447-bfe6-bc362184ca66',
-    hourlyValue: 20.0,
+    vehicle,
     hours: 3,
     value: 60.0,
     date: new Date(Date.now()),

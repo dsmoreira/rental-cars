@@ -4,12 +4,14 @@ import { Rental } from '../models/rental';
 import { CheckoutActions } from '../actions/index';
 
 const inicialRental: Rental = {
-  vehicleId: '',
-  hourlyValue: 0,
+  vehicle: undefined,
   hours: 0,
   value: 0,
-  date: null,
+  date: undefined,
 };
+
+const calculaValor = (valor: number | undefined, horas: number) =>
+  !!valor ? valor * horas : 0;
 
 export interface CheckoutState {
   rental: Rental;
@@ -28,11 +30,10 @@ const checkoutReducer = createReducer(
   on(CheckoutActions.changeVehicle, (state, { vehicle }) => ({
     ...state,
     nextRental: {
-      vehicleId: vehicle.id,
-      hourlyValue: vehicle.hourlyValue,
+      vehicle,
       hours: 1,
       value: vehicle.hourlyValue,
-      date: null,
+      date: undefined,
     },
   })),
   on(CheckoutActions.confirmChangeVehicle, (state) => ({
@@ -49,7 +50,10 @@ const checkoutReducer = createReducer(
     rental: {
       ...state.rental,
       hours: state.rental.hours + 1,
-      value: state.rental.hourlyValue * (state.rental.hours + 1),
+      value: calculaValor(
+        state.rental?.vehicle?.hourlyValue,
+        state.rental.hours + 1
+      ),
     },
   })),
   on(CheckoutActions.confirmDecreaseHours, (state) => ({
@@ -57,7 +61,10 @@ const checkoutReducer = createReducer(
     rental: {
       ...state.rental,
       hours: state.rental.hours - 1,
-      value: state.rental.hourlyValue * (state.rental.hours - 1),
+      value: calculaValor(
+        state.rental?.vehicle?.hourlyValue,
+        state.rental.hours - 1
+      ),
     },
   })),
   on(CheckoutActions.confirmRemoveVehicle, (state) => ({

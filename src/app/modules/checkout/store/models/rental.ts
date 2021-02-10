@@ -1,7 +1,8 @@
+import { Vehicle } from '../../../home/store/models/vehicle';
+
 export interface Rental {
-  vehicleId: string;
-  hourlyValue: number;
+  vehicle?: Vehicle;
   hours: number;
   value: number;
-  date: Date | null;
+  date?: Date;
 }

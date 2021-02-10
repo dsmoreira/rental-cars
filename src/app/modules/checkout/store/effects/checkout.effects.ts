@@ -29,7 +29,7 @@ export class CheckoutEffects {
       mergeMap(() =>
         this.store.select(selectRental).pipe(
           take(1),
-          map((rental: Rental) => !!rental.vehicleId)
+          map((rental: Rental) => !!rental.vehicle)
         )
       ),
       map((result) => {

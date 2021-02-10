@@ -1,1 +1,12 @@
-<label *ngIf="rental$ | async">{{ (rental$ | async)?.value }}</label>
+<div *ngIf="rental$ | async as rental">
+  <label>{{ rental?.value }}</label>
+  <button
+    mat-raised-button
+    color="accent"
+    *ngIf="rental.vehicle"
+    data-testid="checkout-resume-checkout"
+    (click)="checkout()"
+  >
+    Fechar Pedido
+  </button>
+</div>

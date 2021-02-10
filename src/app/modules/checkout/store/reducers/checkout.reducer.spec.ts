@@ -31,11 +31,10 @@ describe('CheckoutReducer', () => {
     const newState: CheckoutReducer.CheckoutState = {
       ...initialState,
       nextRental: {
-        vehicleId: vehicle.id,
-        hourlyValue: vehicle.hourlyValue,
+        vehicle,
         hours: 1,
         value: vehicle.hourlyValue,
-        date: null,
+        date: undefined,
       },
     };
 
@@ -50,20 +49,18 @@ describe('CheckoutReducer', () => {
     const initialState = { ...CheckoutReducer.initialState };
 
     initialState.nextRental = {
-      vehicleId: vehicle.id,
-      hourlyValue: vehicle.hourlyValue,
+      vehicle,
       hours: 1,
       value: vehicle.hourlyValue,
-      date: null,
+      date: undefined,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
       rental: {
-        vehicleId: vehicle.id,
-        hourlyValue: vehicle.hourlyValue,
+        vehicle,
         hours: 1,
         value: vehicle.hourlyValue,
-        date: null,
+        date: undefined,
       },
       loading: false,
       nextRental: null,
@@ -80,11 +77,10 @@ describe('CheckoutReducer', () => {
     const initialState = { ...CheckoutReducer.initialState };
 
     initialState.nextRental = {
-      vehicleId: vehicle.id,
-      hourlyValue: vehicle.hourlyValue,
+      vehicle,
       hours: 1,
       value: vehicle.hourlyValue,
-      date: null,
+      date: undefined,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
@@ -103,20 +99,18 @@ describe('CheckoutReducer', () => {
     const initialState = { ...CheckoutReducer.initialState };
 
     initialState.rental = {
-      vehicleId: vehicle.id,
-      hourlyValue: vehicle.hourlyValue,
+      vehicle,
       hours: 1,
       value: vehicle.hourlyValue,
-      date: null,
+      date: undefined,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
       rental: {
-        vehicleId: vehicle.id,
-        hourlyValue: vehicle.hourlyValue,
+        vehicle,
         hours: 2,
         value: 2 * vehicle.hourlyValue,
-        date: null,
+        date: undefined,
       },
       loading: false,
       nextRental: null,
@@ -133,20 +127,18 @@ describe('CheckoutReducer', () => {
     const initialState = { ...CheckoutReducer.initialState };
 
     initialState.rental = {
-      vehicleId: vehicle.id,
-      hourlyValue: vehicle.hourlyValue,
+      vehicle,
       hours: 2,
       value: 2 * vehicle.hourlyValue,
-      date: null,
+      date: undefined,
     };
 
     const newState: CheckoutReducer.CheckoutState = {
       rental: {
-        vehicleId: vehicle.id,
-        hourlyValue: vehicle.hourlyValue,
+        vehicle,
         hours: 1,
         value: vehicle.hourlyValue,
-        date: null,
+        date: undefined,
       },
       loading: false,
       nextRental: null,
@@ -163,11 +155,10 @@ describe('CheckoutReducer', () => {
     const initialState = { ...CheckoutReducer.initialState };
 
     initialState.rental = {
-      vehicleId: vehicle.id,
-      hourlyValue: vehicle.hourlyValue,
+      vehicle,
       hours: 1,
       value: vehicle.hourlyValue,
-      date: null,
+      date: undefined,
     };
 
     const newState: CheckoutReducer.CheckoutState = {

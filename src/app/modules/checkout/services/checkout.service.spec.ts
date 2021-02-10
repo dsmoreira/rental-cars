@@ -9,12 +9,14 @@ import { CheckoutService } from './checkout.service';
 import { DummyTestComponent } from '../../../../../__mocks__/DummyComponent';
 import { environment } from '../../../../environments/environment';
 import { Rental } from '../store/models/rental';
+import { vehicles } from '../../../../../__mocks__/DbMock';
+
+const vehicle = vehicles[0];
 
 const rental: Rental = {
-  vehicleId: '368c9bce-b2f9-41e7-a924-f4643bac4f89',
-  hourlyValue: 13.0,
+  vehicle,
   hours: 3,
-  value: 39.0,
+  value: vehicle.hourlyValue * 3,
   date: new Date(Date.now()),
 };
 

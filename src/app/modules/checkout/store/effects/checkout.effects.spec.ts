@@ -14,25 +14,19 @@ import { NavigationActions } from '../../../../store/actions';
 import { NotificationService } from '../../../../core/services/notification.service';
 import { Rental } from '../../../checkout/store/models/rental';
 import { Vehicle } from '../../../home/store/models/vehicle';
+import { vehicles } from '../../../../../../__mocks__/DbMock';
 
-const vehicle: Vehicle = {
-  id: '95ef282b-4378-4447-bfe6-bc362184ca66',
-  make: 'Ford',
-  model: 'Eco Sport SE',
-  year: 2020,
-  hourlyValue: 20.0,
-  fuel: ['gasolina", "álcool'],
-  trunkCapacity: '350 litro',
-  category: 'completo',
-};
+const vehicle: Vehicle = vehicles[0];
+const diffVehicle: Vehicle = vehicles[1];
 
 const initialState = {
   checkout: {
     rental: {
-      vehicleId: '',
+      vehicle: undefined,
       hourlyValue: 0,
       hours: 0,
       value: 0,
+      date: undefined,
     },
   },
   auth: {
@@ -43,8 +37,7 @@ const initialState = {
 };
 
 const rental: Rental = {
-  vehicleId: vehicle.id,
-  hourlyValue: vehicle.hourlyValue,
+  vehicle,
   hours: 5,
   value: 5 * vehicle.hourlyValue,
   date: new Date(Date.now()),
@@ -119,10 +112,10 @@ describe('CheckoutEffects', () => {
       ...initialState,
       checkout: {
         rental: {
-          vehicleId: '81689e57-a7d8-4187-b3ba-be2f77277d0e',
-          hourlyValue: 10.0,
+          vehicle: diffVehicle,
           hours: 1,
-          value: 10.0,
+          value: diffVehicle.hourlyValue,
+          date: new Date(Date.now()),
         },
       },
     });
@@ -171,10 +164,10 @@ describe('CheckoutEffects', () => {
       ...initialState,
       checkout: {
         rental: {
-          vehicleId: '81689e57-a7d8-4187-b3ba-be2f77277d0e',
-          hourlyValue: 10.0,
+          vehicle: diffVehicle,
           hours: 2,
-          value: 20.0,
+          value: diffVehicle.hourlyValue * 2,
+          date: new Date(Date.now()),
         },
       },
     });
@@ -192,10 +185,10 @@ describe('CheckoutEffects', () => {
       ...initialState,
       checkout: {
         rental: {
-          vehicleId: '81689e57-a7d8-4187-b3ba-be2f77277d0e',
-          hourlyValue: 10.0,
+          vehicle: diffVehicle,
           hours: 1,
-          value: 10.0,
+          value: diffVehicle.hourlyValue,
+          date: new Date(Date.now()),
         },
       },
     });
