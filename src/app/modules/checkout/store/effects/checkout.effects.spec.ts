@@ -245,7 +245,7 @@ describe('CheckoutEffects', () => {
 
     effects.saveRental$.subscribe((result) => {
       expect(result).toMatchObject(
-        NavigationActions.navigationGo({ payload: { path: ['/auth'] } })
+        NavigationActions.navigationGo({ path: ['/auth'] })
       );
       done();
     });
@@ -313,7 +313,7 @@ describe('CheckoutEffects', () => {
 
     effects.saveRentalSuccess$.subscribe((result) => {
       expect(result).toMatchObject(
-        NavigationActions.navigationGo({ payload: { path: ['/books'] } })
+        NavigationActions.navigationGo({ path: ['/books'] })
       );
       done();
     });

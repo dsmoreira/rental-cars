@@ -30,7 +30,7 @@ export class BookEffects {
   booksNavigate$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NavigationActions.navigationPerfomed),
-      filter((action) => action.payload.path === '/books'),
+      filter((action) => action.path === '/books'),
       concatMap(() => of(BookActions.getBooks()))
     )
   );

@@ -22,25 +22,10 @@ export class NavigationEffects {
   navigate$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NavigationActions.navigationGo),
-      map((action: any) => action.payload),
       tap(({ path, queryParams, extras }) =>
         this.router.navigate(path, { queryParams, ...extras })
       ),
       mergeMap(() => of(NavigationActions.navigationEnd()))
-    )
-  );
-
-  navigateBack$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(NavigationActions.navigationBack),
-      tap(() => this.location.back())
-    )
-  );
-
-  navigateForward$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(NavigationActions.navigationForward),
-      tap(() => this.location.forward())
     )
   );
 
@@ -65,9 +50,7 @@ export class NavigationEffects {
           path: routeConfig.path,
         };
 
-        this.store.dispatch(
-          NavigationActions.navigationPerfomed({ payload: routerState })
-        );
+        this.store.dispatch(NavigationActions.navigationPerfomed(routerState));
       });
   }
 }

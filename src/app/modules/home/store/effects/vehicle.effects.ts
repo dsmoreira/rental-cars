@@ -26,7 +26,7 @@ export class VehicleEffects {
   homeNavigate$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NavigationActions.navigationPerfomed),
-      filter((action) => action.payload.path === ''),
+      filter((action) => action.path === ''),
       concatMap(() => of(VehicleActions.getVehicles()))
     )
   );
@@ -36,13 +36,11 @@ export class VehicleEffects {
       ofType(VehicleActions.getVehicles),
       mergeMap(() =>
         this.vehicleService.availableVehicles().pipe(
-          map((vehicles) =>
-            VehicleActions.getVehiclesSuccess({ payload: { vehicles } })
-          ),
+          map((vehicles) => VehicleActions.getVehiclesSuccess({ vehicles })),
           catchError((error) => {
             return of(
               VehicleActions.getVehiclesError({
-                payload: { error: { message: error } },
+                error: { message: error },
               })
             );
           })
@@ -54,8 +52,7 @@ export class VehicleEffects {
   getVehiclesError$ = createEffect(() =>
     this.actions$.pipe(
       ofType(VehicleActions.getVehiclesError),
-      map((action: any) => action.payload),
-      tap((payload) => this.notificationService.notifyError(payload.error))
+      tap((action) => this.notificationService.notifyError(action.error))
     )
   );
 }

@@ -7,14 +7,10 @@ export const getVehicles = createAction('[Vehicles] Get');
 
 export const getVehiclesSuccess = createAction(
   '[Vehicles] Get Success',
-  props<{
-    payload: { vehicles: Vehicle[] };
-  }>()
+  props<{ vehicles: Vehicle[] }>()
 );
 
 export const getVehiclesError = createAction(
   '[Vehicles] Get Error',
-  props<{
-    payload: { error: AppError };
-  }>()
+  props<{ error: AppError }>()
 );

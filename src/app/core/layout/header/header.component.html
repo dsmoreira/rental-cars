@@ -1,3 +1,8 @@
 <mat-toolbar color="primary" class="toolbar-wrapper">
-  <ng-content select="app-checkout-resume"></ng-content>
+  <div>
+    <ng-content select="[left]"></ng-content>
+  </div>
+  <div>
+    <ng-content select="[right]"></ng-content>
+  </div>
 </mat-toolbar>

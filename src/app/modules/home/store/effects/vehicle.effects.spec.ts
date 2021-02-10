@@ -57,7 +57,10 @@ describe('VehicleEffects', () => {
   it('ao navegar para a home os veículos devem ser carregados', (done) => {
     actions$ = of(
       NavigationActions.navigationPerfomed({
-        payload: { params: {}, queryParams: {}, data: {}, path: '' },
+        params: {},
+        queryParams: {},
+        data: {},
+        path: '',
       })
     );
 
@@ -72,7 +75,7 @@ describe('VehicleEffects', () => {
 
     effects.getVehicles$.subscribe((action) => {
       expect(action).toMatchObject(
-        VehicleActions.getVehiclesSuccess({ payload: { vehicles } })
+        VehicleActions.getVehiclesSuccess({ vehicles })
       );
       done();
     });
@@ -86,7 +89,7 @@ describe('VehicleEffects', () => {
     effects.getVehicles$.subscribe((result) => {
       expect(result).toMatchObject(
         VehicleActions.getVehiclesError({
-          payload: { error: { message: 'Opss!!' } },
+          error: { message: 'Opss!!' },
         })
       );
       done();
@@ -96,11 +99,7 @@ describe('VehicleEffects', () => {
   it('ao ocorrer erro na busca de veiculos o serviço de notificação deve notificar um erro', (done) => {
     const error = { message: 'Opss!!' };
 
-    actions$ = of(
-      VehicleActions.getVehiclesError({
-        payload: { error },
-      })
-    );
+    actions$ = of(VehicleActions.getVehiclesError({ error }));
 
     effects.getVehiclesError$.subscribe((result) => {
       expect(notificationServiceSpy).toHaveBeenCalledWith(error);

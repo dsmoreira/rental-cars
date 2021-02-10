@@ -76,7 +76,10 @@ describe('BookEffects', () => {
   it('ao navegar para a lista de reservas as reservas devem ser carregadas', (done) => {
     actions$ = of(
       NavigationActions.navigationPerfomed({
-        payload: { params: {}, queryParams: {}, data: {}, path: '/books' },
+        params: {},
+        queryParams: {},
+        data: {},
+        path: '/books',
       })
     );
 

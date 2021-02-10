@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthReducer } from './store/reducers';
 import { CheckoutEffects } from './modules/checkout/store/effects/checkout.effects';
 import { CheckoutReducer } from './modules/checkout/store/reducers';
 import { NavigationEffects } from './store/effects/navigation.effects';
@@ -18,11 +19,12 @@ import { VehicleReducer } from './modules/home/store/reducers';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    EffectsModule.forRoot([NavigationEffects, VehicleEffects, CheckoutEffects]),
+    EffectsModule.forRoot([CheckoutEffects, NavigationEffects, VehicleEffects]),
     HttpClientModule,
     StoreModule.forRoot({
-      vehicle: VehicleReducer.reducer,
+      auth: AuthReducer.reducer,
       checkout: CheckoutReducer.reducer,
+      vehicle: VehicleReducer.reducer,
     }),
     BrowserAnimationsModule,
   ],

@@ -19,9 +19,9 @@ const vehiclesReducer = createReducer(
     ...state,
     loading: true,
   })),
-  on(VehicleActions.getVehiclesSuccess, (state, { payload }) => ({
+  on(VehicleActions.getVehiclesSuccess, (state, { vehicles }) => ({
     ...state,
-    vehicles: payload.vehicles,
+    vehicles,
     loading: false,
   })),
   on(VehicleActions.getVehiclesError, (state) => ({

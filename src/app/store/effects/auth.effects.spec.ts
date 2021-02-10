@@ -122,7 +122,7 @@ describe('AuthEffects', () => {
 
     effects.loginSuccess$.subscribe((result) => {
       expect(result).toMatchObject(
-        NavigationActions.navigationGo({ payload: { path: ['/books'] } })
+        NavigationActions.navigationGo({ path: ['/books'] })
       );
       done();
     });
@@ -179,7 +179,7 @@ describe('AuthEffects', () => {
 
     effects.signupSuccess$.subscribe((result) => {
       expect(result).toMatchObject(
-        NavigationActions.navigationGo({ payload: { path: ['/login'] } })
+        NavigationActions.navigationGo({ path: ['/login'] })
       );
       done();
     });

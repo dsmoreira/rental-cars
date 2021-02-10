@@ -76,34 +76,14 @@ describe('NavigationEffects', () => {
   it('ao executar a ação navigationGo serviço de navegação deve ser acionado', (done) => {
     actions$ = of(
       NavigationActions.navigationGo({
-        payload: {
-          path: [''],
-          queryParams: {},
-          extras: {},
-        },
+        path: [''],
+        queryParams: {},
+        extras: {},
       })
     );
 
     effects.navigate$.subscribe(() => {
       expect(routerNaviteSpy).toBeCalled();
-      done();
-    });
-  });
-
-  it('ao executar a ação navigationBack serviço de navegação deve ser acionado para voltar', (done) => {
-    actions$ = of(NavigationActions.navigationBack());
-
-    effects.navigateBack$.subscribe(() => {
-      expect(locationBackSpy).toBeCalled();
-      done();
-    });
-  });
-
-  it('ao executar a ação navigationForward serviço de navegação deve ser acionado para prosseguir', (done) => {
-    actions$ = of(NavigationActions.navigationForward());
-
-    effects.navigateForward$.subscribe(() => {
-      expect(locationForwardSpy).toBeCalled();
       done();
     });
   });
@@ -125,7 +105,10 @@ describe('NavigationEffects', () => {
     routerEventSubject.next(new NavigationEnd(1, '', ''));
 
     expect(storeSpy).toHaveBeenCalledWith({
-      payload: { params: {}, queryParams: { id: 1 }, data: {}, path: 'test' },
+      params: {},
+      queryParams: { id: 1 },
+      data: {},
+      path: 'test',
       type: NavigationActions.navigationPerfomed.type,
     });
   });

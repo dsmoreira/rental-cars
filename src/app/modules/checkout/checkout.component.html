@@ -1,1 +1,13 @@
-<p>checkout works!</p>
+<app-header>
+  <button right mat-raised-button color="accent" (click)="goHome()">
+    Escolher outro veículo
+  </button>
+</app-header>
+<div class="checkout-wrapper" *ngIf="rental$ | async as rental">
+  <label>Total: {{ rental.value }}</label>
+  <app-vehicle-detail [vehicle]="rental.vehicle"></app-vehicle-detail>
+  <app-vehicle-actions [vehicle]="rental.vehicle"></app-vehicle-actions>
+  <button right mat-raised-button color="primary" (click)="checkout(rental)">
+    Reservar
+  </button>
+</div>

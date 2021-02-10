@@ -22,7 +22,7 @@ export class CheckoutResumeComponent implements OnInit {
 
   checkout(): void {
     this.store.dispatch(
-      NavigationActions.navigationGo({ payload: { path: ['/checkout'] } })
+      NavigationActions.navigationGo({ path: ['/checkout'] })
     );
   }
 }

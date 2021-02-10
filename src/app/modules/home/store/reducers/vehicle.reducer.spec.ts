@@ -37,7 +37,7 @@ describe('VehicleReducer', () => {
       loading: false,
     };
 
-    const action = VehicleActions.getVehiclesSuccess({ payload: { vehicles } });
+    const action = VehicleActions.getVehiclesSuccess({ vehicles });
 
     const state = VehicleReducer.reducer(initialState, action);
 
@@ -53,7 +53,7 @@ describe('VehicleReducer', () => {
     };
 
     const action = VehicleActions.getVehiclesError({
-      payload: { error: { message: 'Opss!!' } },
+      error: { message: 'Opss!!' },
     });
 
     const state = VehicleReducer.reducer(initialState, action);

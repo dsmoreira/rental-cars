@@ -32,9 +32,7 @@ export class AuthEffects {
   loginSuccess$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AuthActions.loginSuccess),
-      map(() =>
-        NavigationActions.navigationGo({ payload: { path: ['/books'] } })
-      )
+      map(() => NavigationActions.navigationGo({ path: ['/books'] }))
     );
   });
 
@@ -62,9 +60,7 @@ export class AuthEffects {
   signupSuccess$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AuthActions.signupSuccess),
-      map(() =>
-        NavigationActions.navigationGo({ payload: { path: ['/login'] } })
-      )
+      map(() => NavigationActions.navigationGo({ path: ['/login'] }))
     );
   });
 

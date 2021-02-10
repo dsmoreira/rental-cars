@@ -44,9 +44,11 @@ export class CheckoutEffects {
     this.actions$.pipe(
       ofType(CheckoutActions.askChangeVehicle),
       mergeMap(() =>
-        this.confirmDialogService.confirm(
-          'Você já tem um veículo selecionado. Deseja alterar o veículo?'
-        )
+        this.confirmDialogService
+          .confirm(
+            'Você já tem um veículo selecionado. Deseja alterar o veículo?'
+          )
+          .pipe(take(1))
       ),
       map((result) => {
         return result
@@ -77,7 +79,9 @@ export class CheckoutEffects {
     this.actions$.pipe(
       ofType(CheckoutActions.askRemoveVehicle),
       mergeMap(() =>
-        this.confirmDialogService.confirm('Deseja remover o veículo?')
+        this.confirmDialogService
+          .confirm('Deseja remover o veículo?')
+          .pipe(take(1))
       ),
       map((result) => {
         return result
@@ -104,9 +108,7 @@ export class CheckoutEffects {
                 );
               })
             )
-          : of(
-              NavigationActions.navigationGo({ payload: { path: ['/auth'] } })
-            );
+          : of(NavigationActions.navigationGo({ path: ['/auth'] }));
       })
     );
   });
@@ -114,9 +116,7 @@ export class CheckoutEffects {
   saveRentalSuccess$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CheckoutActions.saveRentalSuccess),
-      map((result) =>
-        NavigationActions.navigationGo({ payload: { path: ['/books'] } })
-      )
+      map((result) => NavigationActions.navigationGo({ path: ['/books'] }))
     );
   });
 
