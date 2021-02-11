@@ -20,6 +20,8 @@ export const loginError = createAction(
   props<{ error: AppError }>()
 );
 
+export const logout = createAction('[Auth] Logout');
+
 export const signup = createAction('[Auth] Signup', props<{ user: User }>());
 
 export const signupSuccess = createAction('[Auth] Signup success');

@@ -3,10 +3,12 @@ import { ActivationStart, NavigationEnd, Router } from '@angular/router';
 import { debounce, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
+import { of } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { NavigationActions } from '../actions';
-import { EMPTY, of } from 'rxjs';
+
+let navigateAfterLogin: string | undefined;
 
 @Injectable()
 export class NavigationEffects {
@@ -22,9 +24,25 @@ export class NavigationEffects {
   navigate$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NavigationActions.navigationGo),
-      tap(({ path, queryParams, extras }) =>
-        this.router.navigate(path, { queryParams, ...extras })
-      ),
+      tap(({ path, queryParams, extras, returnAfterLoginUrl }) => {
+        if (!navigateAfterLogin && returnAfterLoginUrl) {
+          navigateAfterLogin = returnAfterLoginUrl;
+        }
+
+        if (path[0] === '/') {
+          navigateAfterLogin = undefined;
+        }
+
+        if (path[0] === '/books' && !!navigateAfterLogin) {
+          this.router.navigate([navigateAfterLogin], {
+            queryParams,
+            ...extras,
+          });
+          navigateAfterLogin = undefined;
+        } else {
+          this.router.navigate(path, { queryParams, ...extras });
+        }
+      }),
       mergeMap(() => of(NavigationActions.navigationEnd()))
     )
   );

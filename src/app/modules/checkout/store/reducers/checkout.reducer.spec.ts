@@ -171,4 +171,47 @@ describe('CheckoutReducer', () => {
 
     expect(state).toMatchObject(newState);
   });
+
+  it('caso não existe veículo selecionado o valor calculado deve ser zero', () => {
+    const initialState = { ...CheckoutReducer.initialState };
+
+    initialState.rental = {
+      vehicle: undefined,
+      hours: 2,
+      value: vehicle.hourlyValue,
+      date: undefined,
+    };
+
+    const newState1: CheckoutReducer.CheckoutState = {
+      rental: {
+        vehicle: undefined,
+        hours: 3,
+        value: 0,
+        date: undefined,
+      },
+      loading: false,
+      nextRental: null,
+    };
+
+    const newState2: CheckoutReducer.CheckoutState = {
+      rental: {
+        vehicle: undefined,
+        hours: 1,
+        value: 0,
+        date: undefined,
+      },
+      loading: false,
+      nextRental: null,
+    };
+
+    expect(
+      CheckoutReducer.reducer(initialState, CheckoutActions.increaseHours())
+    ).toMatchObject(newState1);
+    expect(
+      CheckoutReducer.reducer(
+        initialState,
+        CheckoutActions.confirmDecreaseHours()
+      )
+    ).toMatchObject(newState2);
+  });
 });

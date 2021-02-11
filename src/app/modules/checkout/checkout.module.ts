@@ -7,6 +7,7 @@ import { CheckoutRoutingModule } from './checkout-routing.module';
 import { HeaderModule } from '../../core/layout/header/header.module';
 import { VehicleDetailModule } from '../../shared/components/vehicle-detail/vehicle-detail.module';
 import { VehicleActionsModule } from '../../shared/components/vehicle-actions/vehicle-actions.module';
+import { LoginDetailModule } from '../../shared/components/login-detail/login-detail.module';
 
 @NgModule({
   declarations: [CheckoutComponent],
@@ -14,6 +15,7 @@ import { VehicleActionsModule } from '../../shared/components/vehicle-actions/ve
     CheckoutRoutingModule,
     CommonModule,
     HeaderModule,
+    LoginDetailModule,
     MatButtonModule,
     VehicleActionsModule,
     VehicleDetailModule,

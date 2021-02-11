@@ -7,6 +7,7 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { VehicleCardModule } from '../../shared/components/vehicle-card/vehicle-card.module';
+import { LoginDetailModule } from '../../shared/components/login-detail/login-detail.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -16,6 +17,7 @@ import { VehicleCardModule } from '../../shared/components/vehicle-card/vehicle-
     HeaderModule,
     HomeRoutingModule,
     LoadingModule,
+    LoginDetailModule,
     VehicleCardModule,
   ],
 })

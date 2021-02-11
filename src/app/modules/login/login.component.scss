@@ -1,3 +1,10 @@
+.login-close-icon {
+  position: absolute;
+  right: 0;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
 .main-wrapper {
   height: 100vh;
   display: flex;
@@ -28,13 +35,13 @@
       & .btn-entrar {
         width: 100%;
       }
+
+      & .signup-link {
+        display: flex;
+        margin-top: 1rem;
+      }
     }
   }
-}
-
-.login-load {
-  display: flex;
-  justify-content: center;
 }
 
 @media (max-width: 1024px) {

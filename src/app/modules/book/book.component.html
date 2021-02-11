@@ -1,1 +1,10 @@
-<p>book works!</p>
+<app-header>
+  <app-login-detail left></app-login-detail>
+  <app-checkout-resume right></app-checkout-resume>
+</app-header>
+<app-loading *ngIf="loading$ | async"></app-loading>
+<div class="books-wrapper">
+  <div *ngFor="let book of books$ | async">
+    <label>{{ book }}</label>
+  </div>
+</div>

@@ -7,6 +7,7 @@ export const navigationGo = createAction(
     path: any[];
     queryParams?: object;
     extras?: NavigationExtras;
+    returnAfterLoginUrl?: string;
   }>()
 );
 

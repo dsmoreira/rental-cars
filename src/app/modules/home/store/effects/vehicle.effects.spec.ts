@@ -62,7 +62,7 @@ describe('VehicleEffects', () => {
         params: {},
         queryParams: {},
         data: {},
-        path: '',
+        path: '/',
       })
     );
 

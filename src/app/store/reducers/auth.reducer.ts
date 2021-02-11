@@ -32,6 +32,12 @@ const authReducer = createReducer(
     ...state,
     loading: false,
   })),
+  on(AuthActions.logout, (state) => ({
+    ...state,
+    userId: '',
+    token: '',
+    name: '',
+  })),
   on(AuthActions.signup, (state) => ({
     ...state,
     loading: true,

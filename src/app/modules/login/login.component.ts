@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { AuthActions } from '../../store/actions';
+import { AuthActions, NavigationActions } from '../../store/actions';
 import { selectLoading } from '../../store/selectors/auth.selector';
 
 @Component({
@@ -34,5 +34,9 @@ export class LoginComponent implements OnInit {
         })
       );
     }
+  }
+
+  returnHome(): void {
+    this.store.dispatch(NavigationActions.navigationGo({ path: ['/'] }));
   }
 }

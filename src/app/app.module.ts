@@ -3,11 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import {
-  DateAdapter,
-  MAT_DATE_FORMATS,
-  MAT_DATE_LOCALE,
-} from '@angular/material/core';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { NgModule } from '@angular/core';
 import { NotifierModule } from 'angular-notifier';
 import { StoreModule } from '@ngrx/store';
@@ -16,8 +12,10 @@ import { AuthEffects } from './store/effects/auth.effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthReducer } from './store/reducers';
+import { BookEffects } from './modules/book/store/effects/book.effects';
 import { CheckoutEffects } from './modules/checkout/store/effects/checkout.effects';
 import { CheckoutReducer } from './modules/checkout/store/reducers';
+import { metaReducers } from './store/reducers/storage.metareducer';
 import { NavigationEffects } from './store/effects/navigation.effects';
 import { VehicleEffects } from './modules/home/store/effects/vehicle.effects';
 import { VehicleReducer } from './modules/home/store/reducers';
@@ -37,6 +35,7 @@ export const MY_DATE_FORMATS = {
     BrowserModule,
     EffectsModule.forRoot([
       AuthEffects,
+      BookEffects,
       CheckoutEffects,
       NavigationEffects,
       VehicleEffects,
@@ -44,11 +43,16 @@ export const MY_DATE_FORMATS = {
     HttpClientModule,
     MatMomentDateModule,
     NotifierModule,
-    StoreModule.forRoot({
-      auth: AuthReducer.reducer,
-      checkout: CheckoutReducer.reducer,
-      vehicle: VehicleReducer.reducer,
-    }),
+    StoreModule.forRoot(
+      {
+        auth: AuthReducer.reducer,
+        checkout: CheckoutReducer.reducer,
+        vehicle: VehicleReducer.reducer,
+      },
+      {
+        metaReducers,
+      }
+    ),
     BrowserAnimationsModule,
   ],
   providers: [

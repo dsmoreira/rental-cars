@@ -6,10 +6,7 @@
       "model": "Uno 1.0",
       "year": 2020,
       "hourlyValue": 10,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "150 litros",
       "category": "básico",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
@@ -20,10 +17,7 @@
       "model": "Mobi 1.0",
       "year": 2020,
       "hourlyValue": 10,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "160 litros",
       "category": "básico",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png"
@@ -34,10 +28,7 @@
       "model": "Kwid 1.0",
       "year": 2020,
       "hourlyValue": 10,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "170 litros",
       "category": "básico",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/KWID.png"
@@ -48,10 +39,7 @@
       "model": "Logan 1.0",
       "year": 2020,
       "hourlyValue": 20,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "320 litros",
       "category": "completo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/LOGN.png"
@@ -62,10 +50,7 @@
       "model": "Prisma 1.0",
       "year": 2020,
       "hourlyValue": 20,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "330 litros",
       "category": "completo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/PRIC.png"
@@ -76,10 +61,7 @@
       "model": "Versa 1.0",
       "year": 2020,
       "hourlyValue": 20,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "350 litros",
       "category": "completo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/VESX.png"
@@ -90,10 +72,7 @@
       "model": "Ka Sedan 1.0",
       "year": 2020,
       "hourlyValue": 20,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "335 litros",
       "category": "completo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/KAS1.png"
@@ -104,10 +83,7 @@
       "model": "HB20S 1.0",
       "year": 2020,
       "hourlyValue": 20,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "350 litros",
       "category": "completo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/HB2C.png"
@@ -118,10 +94,7 @@
       "model": "Onix Plus 1.0",
       "year": 2020,
       "hourlyValue": 20,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "350 litros",
       "category": "completo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/ONIT.png"
@@ -132,10 +105,7 @@
       "model": "Corolla GLI",
       "year": 2020,
       "hourlyValue": 30,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "380 litros",
       "category": "luxo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/CORO.png"
@@ -146,10 +116,7 @@
       "model": "Cruze",
       "year": 2020,
       "hourlyValue": 30,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "370 litros",
       "category": "luxo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/CRUT.png"
@@ -160,10 +127,7 @@
       "model": "Jetta",
       "year": 2020,
       "hourlyValue": 30,
-      "fuel": [
-        "gasolina",
-        "álcool"
-      ],
+      "fuel": ["gasolina", "álcool"],
       "trunkCapacity": "380 litros",
       "category": "luxo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/JETA.png"
@@ -174,9 +138,7 @@
       "model": "Compass",
       "year": 2020,
       "hourlyValue": 35,
-      "fuel": [
-        "diesel"
-      ],
+      "fuel": ["diesel"],
       "trunkCapacity": "380 litros",
       "category": "luxo",
       "image": "https://www.localiza.com/brasil-site/geral/Frota/COMP.png"
@@ -216,84 +178,6 @@
       "complement": "Sala 1220",
       "city": "Belo Horizonte",
       "state": "MG"
-    },
-    {
-      "name": "Alisson Silva Moreira",
-      "document": "01234567890",
-      "password": "123456",
-      "birthdate": "1989-03-03T03:00:00.000Z",
-      "zipcode": "30624120",
-      "street": "Rua Cacatua",
-      "number": "175",
-      "complement": "Casa A",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "id": "cMEMDxQ"
-    },
-    {
-      "name": "Daniel Silva Moreira",
-      "document": "01234567890",
-      "password": "123456",
-      "birthdate": "1989-03-03T03:00:00.000Z",
-      "zipcode": "30624120",
-      "street": "Rua Cacatua",
-      "number": "175",
-      "complement": "Casa A",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "id": "gFS341f"
-    },
-    {
-      "name": "Daniel Silva Moreira",
-      "document": "01234567890",
-      "password": "123456",
-      "birthdate": "1989-03-03T03:00:00.000Z",
-      "zipcode": "30624120",
-      "street": "Rua Cacatua",
-      "number": "175",
-      "complement": "Casa A",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "id": "ELxdezi"
-    },
-    {
-      "name": "Daniel Silva Moreira",
-      "document": "01234567890",
-      "password": "123456",
-      "birthdate": "1989-03-03T03:00:00.000Z",
-      "zipcode": "30624120",
-      "street": "Rua Cacatua",
-      "number": "175",
-      "complement": "Casa A",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "id": "bbSpriR"
-    },
-    {
-      "name": "Daniel Silva Moreira",
-      "document": "01234567890",
-      "password": "123456",
-      "birthdate": "1989-03-03T03:00:00.000Z",
-      "zipcode": "30624120",
-      "street": "Rua Cacatua",
-      "number": "175",
-      "complement": "Casa A",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "id": "dbC6I7F"
-    },
-    {
-      "name": "Daniel Silva Moreira",
-      "document": "01234567890",
-      "password": "123456",
-      "birthdate": "1989-03-03T03:00:00.000Z",
-      "zipcode": "30624120",
-      "street": "Rua Cacatua",
-      "number": "175",
-      "complement": "Casa A",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "id": "aqi09je"
     }
   ]
 }

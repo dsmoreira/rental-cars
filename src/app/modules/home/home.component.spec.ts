@@ -11,6 +11,7 @@ import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { VehicleCardModule } from '../../shared/components/vehicle-card/vehicle-card.module';
 import { vehicles } from '../../../../__mocks__/DbMock';
 import { VehicleState } from './store/reducers/vehicle.reducer';
+import { LoginDetailModule } from '../../shared/components/login-detail/login-detail.module';
 
 const state: VehicleState = {
   vehicles,
@@ -34,6 +35,7 @@ describe('HomeComponent', () => {
         CommonModule,
         HeaderModule,
         LoadingModule,
+        LoginDetailModule,
         VehicleCardModule,
       ],
       providers: [provideMockStore({ initialState })],

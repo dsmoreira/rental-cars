@@ -1,4 +1,18 @@
 .toolbar-wrapper {
   display: flex;
-  justify-content: space-between;
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  & > *:first-child {
+    justify-content: flex-start;
+  }
+
+  & > *:last-child {
+    justify-content: flex-end;
+  }
 }

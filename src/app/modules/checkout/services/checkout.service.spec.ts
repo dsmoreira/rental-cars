@@ -47,7 +47,7 @@ describe('CheckoutService', () => {
   });
 
   it('deve salvar o registro de aluguel', (done) => {
-    const url = `${environment.apiUrl}/book`;
+    const url = `${environment.apiUrl}/books`;
 
     service.save(rental).subscribe((resultado) => {
       done();

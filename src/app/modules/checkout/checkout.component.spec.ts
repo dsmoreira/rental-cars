@@ -9,6 +9,7 @@ import { CheckoutComponent } from './checkout.component';
 import { HeaderModule } from '../../core/layout/header/header.module';
 import { VehicleActionsModule } from '../../shared/components/vehicle-actions/vehicle-actions.module';
 import { VehicleDetailModule } from '../../shared/components/vehicle-detail/vehicle-detail.module';
+import { LoginDetailModule } from '../../shared/components/login-detail/login-detail.module';
 
 describe('CheckoutComponent', () => {
   let renderResult: RenderResult<CheckoutComponent>;
@@ -19,6 +20,7 @@ describe('CheckoutComponent', () => {
       imports: [
         BrowserModule,
         HeaderModule,
+        LoginDetailModule,
         MatButtonModule,
         RouterTestingModule,
         VehicleActionsModule,

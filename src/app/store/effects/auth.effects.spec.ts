@@ -215,4 +215,15 @@ describe('AuthEffects', () => {
       done();
     });
   });
+
+  it('ao efetuar logout o sistema deve redirecionar para a home', (done) => {
+    actions$ = of(AuthActions.logout());
+
+    effects.logout$.subscribe((result) => {
+      expect(result).toMatchObject(
+        NavigationActions.navigationGo({ path: ['/'] })
+      );
+      done();
+    });
+  });
 });

@@ -26,7 +26,7 @@ export class VehicleEffects {
   homeNavigate$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NavigationActions.navigationPerfomed),
-      filter((action) => action.path === ''),
+      filter((action) => action.path === '/'),
       concatMap(() => of(VehicleActions.getVehicles()))
     )
   );

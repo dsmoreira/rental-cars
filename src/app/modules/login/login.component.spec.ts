@@ -1,18 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { ComponentFixture } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { NgxMaskModule } from 'ngx-mask';
 import { render, RenderResult } from '@testing-library/angular';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AuthState } from '../../store/reducers/auth.reducer';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
-import { RouterTestingModule } from '@angular/router/testing';
+import { LogoModule } from '../../shared/components/logo/logo.module';
 
 const state: AuthState = {
   name: '',
@@ -40,9 +43,13 @@ describe('LoginComponent', () => {
         FormsModule,
         LoadingModule,
         LoginRoutingModule,
+        LogoModule,
+        MatButtonModule,
         MatCardModule,
         MatFormFieldModule,
+        MatIconModule,
         MatInputModule,
+        NgxMaskModule.forRoot(),
         ReactiveFormsModule,
         RouterTestingModule,
       ],

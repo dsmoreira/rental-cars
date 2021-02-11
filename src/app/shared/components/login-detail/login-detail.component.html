@@ -1,0 +1,7 @@
+<div *ngIf="isLogged$ | async" class="login-detail-wrapper">
+  Olá <label>{{ userName$ | async }}!</label>
+  <a (click)="logout()" class="login-detail-logout">(Sair)</a>
+</div>
+<div *ngIf="(isLogged$ | async) === false" class="login-detail-wrapper">
+  <a (click)="login()" class="login-detail-logout">Entrar</a>
+</div>

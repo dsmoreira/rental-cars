@@ -51,7 +51,7 @@ const checkoutReducer = createReducer(
       ...state.rental,
       hours: state.rental.hours + 1,
       value: calculaValor(
-        state.rental?.vehicle?.hourlyValue,
+        state.rental.vehicle?.hourlyValue,
         state.rental.hours + 1
       ),
     },
@@ -62,7 +62,7 @@ const checkoutReducer = createReducer(
       ...state.rental,
       hours: state.rental.hours - 1,
       value: calculaValor(
-        state.rental?.vehicle?.hourlyValue,
+        state.rental.vehicle?.hourlyValue,
         state.rental.hours - 1
       ),
     },

@@ -2,6 +2,7 @@ import { AuthActions } from '../actions';
 import { AuthReducer } from './';
 import { LoginInfo } from '../models/login-info';
 import { LoginResult } from '../models/login-result';
+import { User } from '../models/user';
 
 const loginInfo: LoginInfo = {
   userName: '78296364000',
@@ -75,5 +76,70 @@ describe('AuthReducer', () => {
     const state = AuthReducer.reducer(initialState, action);
 
     expect(state).toMatchObject(newState);
+  });
+
+  it('ao efetuar logout os dados do usuário devem ser limpos', () => {
+    const { initialState } = AuthReducer;
+
+    const currentState = {
+      ...initialState,
+      userId: loginResult.id,
+      name: loginResult.name,
+      token: loginResult.token,
+      loading: false,
+    };
+
+    const newState: AuthReducer.AuthState = {
+      ...initialState,
+      userId: '',
+      name: '',
+      token: '',
+      loading: false,
+    };
+
+    const action = AuthActions.logout();
+
+    const state = AuthReducer.reducer(currentState, action);
+
+    expect(state).toMatchObject(newState);
+  });
+
+  it('ao solicitar um cadastro a aplicação deve informar que esta carregando', () => {
+    const { initialState } = AuthReducer;
+
+    const newState: AuthReducer.AuthState = {
+      ...initialState,
+      loading: true,
+    };
+
+    const action = AuthActions.signup({ user: {} as User });
+
+    const state = AuthReducer.reducer(initialState, action);
+
+    expect(state).toMatchObject(newState);
+  });
+
+  it('ao finalizar o cadastro com sucesso ou o erro a aplicação deve parar o loading', () => {
+    const { initialState } = AuthReducer;
+
+    const currentState = {
+      ...initialState,
+      loading: true,
+    };
+
+    const newState: AuthReducer.AuthState = {
+      ...initialState,
+      loading: false,
+    };
+
+    expect(
+      AuthReducer.reducer(currentState, AuthActions.signupSuccess())
+    ).toMatchObject(newState);
+    expect(
+      AuthReducer.reducer(
+        currentState,
+        AuthActions.signupError({ error: {} as Error })
+      )
+    ).toMatchObject(newState);
   });
 });

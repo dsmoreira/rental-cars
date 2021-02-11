@@ -89,4 +89,11 @@ export class AuthEffects {
       map(() => AuthActions.noopAction())
     );
   });
+
+  logout$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthActions.logout),
+      map(() => NavigationActions.navigationGo({ path: ['/'] }))
+    );
+  });
 }

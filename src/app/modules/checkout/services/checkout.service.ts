@@ -21,7 +21,7 @@ export class CheckoutService {
       id: this.createGuid(),
       licensePlate: this.createLicensePlate(),
     };
-    return this.httpCliente.post<any>(`${this.apiUrl}/book`, book);
+    return this.httpCliente.post<any>(`${this.apiUrl}/books`, book);
   }
 
   private createGuid(): string {
