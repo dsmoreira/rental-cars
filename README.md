@@ -1,4 +1,4 @@
-# Aluga Liza
+# Alugaliza
 
 Projeto para utilização de conceitos de front-end com o contexto de aluguel de carros:
 
@@ -19,8 +19,9 @@ Para desenvolvimento e teste da aplicação foi usado o pacote NPM [json-server]
 Para melhorar a qualidade do código durante o processo foi utilizado o [husky](https://www.npmjs.com/package/husky) e padronizado os commits e pushs com ações de lint e validação de cobertura de código. Para os testes unitários foi utilizado o jest.
 
 **IMPORTANTE**
-*Para teste da aplicação a senha não é validada no login devido a api ser feita como um mock.
-*Alguns pontos necessitam de testes complementares que serão repriorizados após avaliação do projeto.
+
+- Para teste da aplicação a senha não é validada no login devido a api ser feita como um mock.
+- Alguns pontos necessitam de testes complementares que serão repriorizados após avaliação do projeto.
 
 ## Angular CLI
 
@@ -32,22 +33,22 @@ Para executar do projeto é necessário instalar as depedencias com o comando `n
 
 ## Scripts
 
-`db` inicia a api rest com os dados do banco de dados no arquivo json
-`build` compila a aplicação
-`lint` executa a análise de código
-`ng` script que escpsula o próprio script do angular CLI
-`postinstall` configura o husky após a instalação das dependências
-`start` script que inicia aplicação (executa a API Rest e o aplicação Front-End)
-`test` executa os testes da aplicação
-`test:watch` executa os testes da aplicação e continua observando alterações de arquivos
-`test:coverage` executa os testes e gera o relatório de cobertura
+- `db` inicia a api rest com os dados do banco de dados no arquivo json
+- `build` compila a aplicação
+- `lint` executa a análise de código
+- `ng` script que escpsula o próprio script do angular CLI
+- `postinstall` configura o husky após a instalação das dependências
+- `start` script que inicia aplicação (executa a API Rest e o aplicação Front-End)
+- `test` executa os testes da aplicação
+- `test:watch` executa os testes da aplicação e continua observando alterações de arquivos
+- `test:coverage` executa os testes e gera o relatório de cobertura
 
 ## Itens utilizados no projeto
 
-[angular-material](https://material.angular.io/guide/getting-started)
-[angular-notifier](https://www.npmjs.com/package/angular-notifier)
-[husky](https://www.npmjs.com/package/husky)
-[json-server](https://www.npmjs.com/package/json-server)
-[NgRx](https://ngrx.io/docs)
-[NgRx/Effects](https://ngrx.io/guide/effects)
-[ngx-mask](https://jsdaddy.github.io/ngx-mask-page/main)
+- [angular-material](https://material.angular.io/guide/getting-started)
+- [angular-notifier](https://www.npmjs.com/package/angular-notifier)
+- [husky](https://www.npmjs.com/package/husky)
+- [json-server](https://www.npmjs.com/package/json-server)
+- [NgRx](https://ngrx.io/docs)
+- [NgRx/Effects](https://ngrx.io/guide/effects)
+- [ngx-mask](https://jsdaddy.github.io/ngx-mask-page/main)
