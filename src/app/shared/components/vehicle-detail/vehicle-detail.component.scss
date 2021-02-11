@@ -1,5 +1,27 @@
 .vehicle-details-wrapper {
   display: flex;
-  flex-direction: column;
   padding: 1rem;
+  justify-content: space-around;
+
+  & .vehicle-details-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & label {
+      font-weight: 600;
+    }
+  }
+
+  & .vehicle-details-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicle-details-wrapper {
+    flex-direction: column;
+  }
 }

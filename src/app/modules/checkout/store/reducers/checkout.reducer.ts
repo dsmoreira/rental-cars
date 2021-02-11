@@ -70,6 +70,10 @@ const checkoutReducer = createReducer(
   on(CheckoutActions.confirmRemoveVehicle, (state) => ({
     ...state,
     rental: { ...inicialRental },
+  })),
+  on(CheckoutActions.saveRentalSuccess, (state) => ({
+    ...state,
+    rental: { ...inicialRental },
   }))
 );
 

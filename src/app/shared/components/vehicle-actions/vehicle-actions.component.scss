@@ -1,0 +1,9 @@
+.vehicle-actions-wraper {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+
+  & .vehicle-actions-hours {
+    padding: 0 1rem;
+  }
+}

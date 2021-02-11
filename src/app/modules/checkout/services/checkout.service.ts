@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatHint } from '@angular/material/form-field';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
@@ -16,7 +17,7 @@ export class CheckoutService {
     const book: Book = {
       vehicleId: rental.vehicle?.id as string,
       hours: rental.hours,
-      date: rental.date?.toDateString() as string,
+      date: rental.date?.format('YYYY-MM-DDTHH:mm:ss.SSS') as string,
       value: rental.value,
       id: this.createGuid(),
       licensePlate: this.createLicensePlate(),
@@ -40,8 +41,10 @@ export class CheckoutService {
   private createLicensePlate(): string {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numbers = '0123456789';
-    return 'xxxxnnnn'.replace(/[xn]/g, (c) =>
-      c === 'x' ? chars[Math.random() % 26] : numbers[Math.random() % 10]
+    return 'xxxnnnn'.replace(/[xn]/g, (c) =>
+      c === 'x'
+        ? chars[Math.ceil((Math.random() * 100) % 26)]
+        : numbers[Math.ceil((Math.random() * 100) % 10)]
     );
   }
 }

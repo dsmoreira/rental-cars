@@ -1,21 +1,58 @@
-import { ComponentFixture } from '@angular/core/testing';
-import { render, RenderResult } from '@testing-library/angular';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  MatDialog,
+  MatDialogModule,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { of } from 'rxjs';
 
-import { DummyTestComponent } from '../../../../__mocks__/DummyComponent';
+import { ConfirmDialogComponent } from '../layout/confirm-dialog/confirm-dialog.component';
 import { ConfirmDialogService } from './confirm-dialog.service';
 
+const mockDialogResponse = of(true);
+
+const mockDialog = {
+  open: () => {
+    return {
+      afterClosed: () => mockDialogResponse,
+    };
+  },
+};
+
 describe('ConfirmDialogService', () => {
-  let renderResult: RenderResult<DummyTestComponent>;
-  let fixture: ComponentFixture<DummyTestComponent>;
-  let component: DummyTestComponent;
+  let fixture: ComponentFixture<ConfirmDialogComponent>;
   let service: ConfirmDialogService;
 
   beforeEach(async () => {
-    renderResult = await render(DummyTestComponent);
-    fixture = renderResult.fixture;
-    component = fixture.componentInstance;
+    TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule, MatDialogModule],
+      declarations: [ConfirmDialogComponent],
+      providers: [
+        ConfirmDialogService,
+        {
+          provide: MatDialogRef,
+          useValue: {},
+        },
+        {
+          provide: MatDialog,
+          useValue: mockDialog,
+        },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+      ],
+    })
+      .overrideModule(BrowserDynamicTestingModule, {
+        set: {
+          entryComponents: [ConfirmDialogComponent],
+        },
+      })
+      .compileComponents();
 
-    service = component.injector.get(ConfirmDialogService);
+    fixture = TestBed.createComponent(ConfirmDialogComponent);
+    fixture.detectChanges();
+    service = TestBed.inject(ConfirmDialogService);
   });
 
   it('deve ser criado', () => {

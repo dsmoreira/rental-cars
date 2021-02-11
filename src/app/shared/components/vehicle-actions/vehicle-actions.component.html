@@ -1,5 +1,5 @@
 <div *ngIf="vehicle" data-testid="vehicle-actions">
-  <div *ngIf="rental$ | async as rental">
+  <div *ngIf="rental$ | async as rental" class="vehicle-actions-wraper">
     <button
       mat-raised-button
       color="primary"
@@ -18,8 +18,8 @@
       >
         <mat-icon>remove</mat-icon>
       </button>
-      <label data-testid="vehicle-actions-hours"
-        >{{ rental.hours }} horas</label
+      <label data-testid="vehicle-actions-hours" class="vehicle-actions-hours"
+        >{{ rental.hours }} hora(s)</label
       >
       <button
         mat-mini-fab

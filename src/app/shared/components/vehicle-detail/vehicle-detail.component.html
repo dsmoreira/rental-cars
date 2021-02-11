@@ -1,10 +1,18 @@
 <div *ngIf="vehicle" class="vehicle-details-wrapper">
-  <label>Marca: {{ vehicle.make }}</label>
-  <label>Modelo: {{ vehicle.model }}</label>
-  <label>Ano: {{ vehicle.year }}</label>
-  <label>Valor/Hora: {{ vehicle.hourlyValue }}</label>
-  <label>Combustível: {{ vehicle.fuel }}</label>
-  <label>Capacidade porta malas: {{ vehicle.trunkCapacity }}</label>
-  <label>Categoria: {{ vehicle.category }}</label>
-  <img src="{{ vehicle.image }}" />
+  <div class="vehicle-details-info">
+    <div><label>Marca: </label>{{ vehicle.make }}</div>
+    <div><label>Modelo: </label>{{ vehicle.model }}</div>
+    <div><label>Ano: </label>{{ vehicle.year }}</div>
+    <div>
+      <label>Valor/Hora: </label>{{ vehicle.hourlyValue | currency: "BRL" }}
+    </div>
+    <div><label>Combustível: </label>{{ vehicle.fuel }}</div>
+    <div>
+      <label>Capacidade porta malas: </label>{{ vehicle.trunkCapacity }}
+    </div>
+    <div><label>Categoria: </label>{{ vehicle.category }}</div>
+  </div>
+  <div class="vehicle-details-img">
+    <img src="{{ vehicle.image }}" />
+  </div>
 </div>

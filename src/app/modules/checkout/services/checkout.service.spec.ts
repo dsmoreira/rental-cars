@@ -11,13 +11,15 @@ import { environment } from '../../../../environments/environment';
 import { Rental } from '../store/models/rental';
 import { vehicles } from '../../../../../__mocks__/DbMock';
 
+import moment from 'moment';
+
 const vehicle = vehicles[0];
 
 const rental: Rental = {
   vehicle,
   hours: 3,
   value: vehicle.hourlyValue * 3,
-  date: new Date(Date.now()),
+  date: moment(),
 };
 
 describe('CheckoutService', () => {

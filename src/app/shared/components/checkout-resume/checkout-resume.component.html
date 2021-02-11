@@ -1,8 +1,9 @@
-<div *ngIf="rental$ | async as rental">
-  <label>{{ rental?.value }}</label>
+<div *ngIf="rental$ | async as rental" class="checkout-resume-wrapper">
+  <label>{{ rental?.value | currency: "BRL" }}</label>
   <button
     mat-raised-button
     color="accent"
+    class="checkout-resume-btn"
     *ngIf="rental.vehicle"
     data-testid="checkout-resume-checkout"
     (click)="checkout()"

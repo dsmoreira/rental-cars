@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -14,9 +15,14 @@ import { selectRental } from './store/selectors/checkout.selector';
 })
 export class CheckoutComponent implements OnInit {
   rental$: Observable<Rental>;
+  rentalDate: FormControl;
+  minDate: Date;
 
   constructor(private store: Store) {
     this.rental$ = this.store.select(selectRental);
+    this.rentalDate = new FormControl('', Validators.required);
+
+    this.minDate = new Date(Date.now());
   }
 
   ngOnInit(): void {}
@@ -26,6 +32,12 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout(rental: Rental): void {
-    this.store.dispatch(CheckoutActions.saveRental({ rental }));
+    if (this.rentalDate.valid) {
+      this.store.dispatch(
+        CheckoutActions.saveRental({
+          rental: { ...rental, date: this.rentalDate.value },
+        })
+      );
+    }
   }
 }

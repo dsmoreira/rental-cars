@@ -3,19 +3,30 @@
 
   & .home-vehicle-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 
-    & .home-vehicle-basic {
-      flex-grow: 1;
-    }
+    & .home-vehicle-basic,
+    .home-vehicle-complete,
+    .home-vehicle-lux {
+      display: flex;
+      flex-wrap: wrap;
 
-    & .home-vehicle-complete {
-      flex-grow: 1;
+      & > * {
+        flex-grow: 1;
+      }
     }
+  }
+}
 
-    & .home-vehicle-lux {
-      flex-grow: 1;
+@media (max-width: 768px) {
+  .home-wrapper {
+    padding: 0;
+
+    & .home-vehicle-list {
+      h2 {
+        padding: 1rem 0 0 1rem;
+      }
     }
   }
 }

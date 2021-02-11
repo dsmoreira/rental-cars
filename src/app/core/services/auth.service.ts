@@ -18,6 +18,9 @@ export class AuthService {
   }
 
   signup(user: User): Observable<User> {
-    return this.httpClient.post<User>(`${this.apiUrl}/user`, user);
+    return this.httpClient.post<User>(`${this.apiUrl}/user`, {
+      ...user,
+      token: 'token_teste',
+    });
   }
 }

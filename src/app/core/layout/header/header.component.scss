@@ -16,3 +16,24 @@
     justify-content: flex-end;
   }
 }
+
+@media (max-width: 768px) {
+  .toolbar-wrapper {
+    height: 120px;
+    padding-top: 0.7rem;
+    flex-wrap: wrap;
+
+    & > * {
+      width: 100%;
+      order: 1;
+      flex-grow: 0;
+      flex-basis: auto;
+    }
+
+    & > *:first-child,
+    & > *:last-child {
+      order: 2;
+      width: 50%;
+    }
+  }
+}

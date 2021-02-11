@@ -1,3 +1,43 @@
 .checkout-wrapper {
-  padding: 2rem;
+  padding: 2rem 10%;
+
+  & .checkout-resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    & .checkout-resume-rental-info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    & .checkout-resume-resume-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 1rem 0;
+      width: 100%;
+
+      & label {
+        padding: 0.2rem 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      & .checkout-resume-value {
+        font-size: 1.3rem;
+      }
+    }
+
+    & .checkout-resume-resume-action {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }

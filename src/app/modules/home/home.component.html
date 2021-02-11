@@ -9,8 +9,8 @@
     class="home-vehicle-list"
     data-testid="vehicle-list"
   >
+    <h2>Básico</h2>
     <div class="home-vehicle-basic" data-testid="home-vehicles-basic">
-      Básico
       <app-vehicle-card
         class="home-vehicle-item"
         *ngFor="let vehicle of basicVehicles$ | async"
@@ -18,8 +18,8 @@
         [vehicle]="vehicle"
       ></app-vehicle-card>
     </div>
+    <h2>Completo</h2>
     <div class="home-vehicle-complete" data-testid="home-vehicles-complete">
-      Completo
       <app-vehicle-card
         class="home-vehicle-item"
         *ngFor="let vehicle of completeVehicles$ | async"
@@ -27,8 +27,8 @@
         [vehicle]="vehicle"
       ></app-vehicle-card>
     </div>
+    <h2>Luxo</h2>
     <div class="home-vehicle-lux" data-testid="home-vehicles-lux">
-      Luxo
       <app-vehicle-card
         class="home-vehicle-item"
         *ngFor="let vehicle of luxVehicles$ | async"

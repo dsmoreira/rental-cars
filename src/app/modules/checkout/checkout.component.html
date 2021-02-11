@@ -4,11 +4,50 @@
     Escolher outro veículo
   </button>
 </app-header>
-<div class="checkout-wrapper" *ngIf="rental$ | async as rental">
-  <label>Total: {{ rental.value }}</label>
-  <app-vehicle-detail [vehicle]="rental.vehicle"></app-vehicle-detail>
-  <app-vehicle-actions [vehicle]="rental.vehicle"></app-vehicle-actions>
-  <button right mat-raised-button color="primary" (click)="checkout(rental)">
-    Reservar
-  </button>
-</div>
+<form>
+  <div class="checkout-wrapper" *ngIf="rental$ | async as rental">
+    <div class="checkout-resume">
+      <h2>Resumo</h2>
+      <div class="checkout-resume-rental-info">
+        <app-vehicle-detail [vehicle]="rental.vehicle"></app-vehicle-detail>
+        <app-vehicle-actions [vehicle]="rental.vehicle"></app-vehicle-actions>
+      </div>
+      <div class="checkout-resume-resume-info">
+        <mat-form-field>
+          <mat-label>Data da reserva</mat-label>
+          <input
+            matInput
+            [min]="minDate"
+            [matDatepicker]="picker"
+            [formControl]="rentalDate"
+            [disabled]="rental.hours == 0"
+            data-testid="checkout-rental-date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+          <mat-error *ngIf="rentalDate.hasError('required')">
+            Data da reserva <strong>obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+        <label>Hora(s): {{ rental.hours }}</label>
+        <label class="checkout-resume-value"
+          >Total: {{ rental.value | currency: "BRL" }}</label
+        >
+      </div>
+      <div class="checkout-resume-resume-action">
+        <button
+          right
+          mat-raised-button
+          [disabled]="rental.hours == 0"
+          color="primary"
+          (click)="checkout(rental)"
+        >
+          Reservar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

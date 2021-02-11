@@ -19,6 +19,7 @@ import { metaReducers } from './store/reducers/storage.metareducer';
 import { NavigationEffects } from './store/effects/navigation.effects';
 import { VehicleEffects } from './modules/home/store/effects/vehicle.effects';
 import { VehicleReducer } from './modules/home/store/reducers';
+import { ConfirmDialogModule } from './core/layout/confirm-dialog/confirm-dialog.module';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -26,6 +27,9 @@ export const MY_DATE_FORMATS = {
   },
   display: {
     dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
   },
 };
 @NgModule({
@@ -33,6 +37,7 @@ export const MY_DATE_FORMATS = {
   imports: [
     AppRoutingModule,
     BrowserModule,
+    ConfirmDialogModule,
     EffectsModule.forRoot([
       AuthEffects,
       BookEffects,
