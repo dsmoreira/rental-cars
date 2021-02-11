@@ -5,4 +5,5 @@ export interface Book {
   value: number;
   licensePlate: string;
   date: string;
+  userId: string;
 }

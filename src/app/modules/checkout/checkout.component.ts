@@ -6,7 +6,10 @@ import { Observable } from 'rxjs';
 import { NavigationActions } from '../../store/actions';
 import { CheckoutActions } from './store/actions';
 import { Rental } from './store/models/rental';
-import { selectRental } from './store/selectors/checkout.selector';
+import {
+  selectRental,
+  selectLoading,
+} from './store/selectors/checkout.selector';
 
 @Component({
   selector: 'app-checkout',
@@ -15,11 +18,13 @@ import { selectRental } from './store/selectors/checkout.selector';
 })
 export class CheckoutComponent implements OnInit {
   rental$: Observable<Rental>;
+  loading$: Observable<boolean>;
   rentalDate: FormControl;
   minDate: Date;
 
   constructor(private store: Store) {
     this.rental$ = this.store.select(selectRental);
+    this.loading$ = this.store.select(selectLoading);
     this.rentalDate = new FormControl('', Validators.required);
 
     this.minDate = new Date(Date.now());

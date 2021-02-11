@@ -4,6 +4,7 @@
     Escolher outro veículo
   </button>
 </app-header>
+<app-loading *ngIf="loading$ | async"></app-loading>
 <form>
   <div class="checkout-wrapper" *ngIf="rental$ | async as rental">
     <div class="checkout-resume">

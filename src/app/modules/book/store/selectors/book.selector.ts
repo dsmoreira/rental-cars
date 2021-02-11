@@ -4,7 +4,7 @@ import { Book } from '../models/book';
 import { BookState } from '../reducers/book.reducer';
 
 export const selectBook = createSelector(
-  (state: any) => state.checkout,
+  (state: any) => state.book,
   (state: BookState) => state
 );
 

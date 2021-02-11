@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { Book } from './store/models/book';
+import { NavigationActions } from '../../store/actions';
 import { selectBooks, selectLoading } from './store/selectors/book.selector';
 
 @Component({
@@ -20,4 +21,8 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  goHome(): void {
+    this.store.dispatch(NavigationActions.navigationGo({ path: ['/'] }));
+  }
 }

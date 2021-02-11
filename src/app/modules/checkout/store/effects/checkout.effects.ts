@@ -10,7 +10,10 @@ import { ConfirmDialogService } from '../../../../core/services/confirm-dialog.s
 import { NavigationActions } from '../../../../store/actions';
 import { NotificationService } from '../../../../core/services/notification.service';
 import { Rental } from '../models/rental';
-import { selectIsLogged } from '../../../../store/selectors/auth.selector';
+import {
+  selectIsLogged,
+  selectUserId,
+} from '../../../../store/selectors/auth.selector';
 import { selectRental } from '../selectors/checkout.selector';
 
 @Injectable()
@@ -97,10 +100,10 @@ export class CheckoutEffects {
     return this.actions$.pipe(
       ofType(CheckoutActions.saveRental),
       tap(({ rental }) => (currentRental = rental)),
-      mergeMap(() => this.store.select(selectIsLogged).pipe(take(1))),
-      mergeMap((result) => {
-        return result
-          ? this.checkoutService.save(currentRental).pipe(
+      mergeMap(() => this.store.select(selectUserId).pipe(take(1))),
+      mergeMap((userId) => {
+        return !!userId
+          ? this.checkoutService.save(currentRental, userId).pipe(
               map(() => CheckoutActions.saveRentalSuccess()),
               catchError((error) => {
                 return of(

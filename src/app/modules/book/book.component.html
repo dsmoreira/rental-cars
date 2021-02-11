@@ -4,7 +4,20 @@
 </app-header>
 <app-loading *ngIf="loading$ | async"></app-loading>
 <div class="books-wrapper">
-  <div *ngFor="let book of books$ | async">
-    <label>{{ book }}</label>
+  <div class="books-list" *ngIf="(loading$ | async) === false">
+    <div class="book-action">
+      <button right mat-raised-button color="accent" (click)="goHome()">
+        Voltar para home
+      </button>
+    </div>
+    <div *ngFor="let book of books$ | async" class="book-item">
+      <label class="book-item-label-prefix">{{ book.licensePlate }}</label>
+      <label>Data: {{ book.date | date: "dd/MM/yyyy" }}</label>
+      <label>Tempo reservado: {{ book.hours }} hora(s)</label>
+      <label>Valor: {{ book.value | currency: "BRL" }}</label>
+    </div>
+    <div *ngIf="(books$ | async)?.length == 0">
+      <label>Você ainda não possui nenhuma reserva</label>
+    </div>
   </div>
 </div>

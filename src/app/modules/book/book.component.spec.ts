@@ -9,6 +9,7 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { HeaderModule } from '../../core/layout/header/header.module';
 import { LoginDetailModule } from '../../shared/components/login-detail/login-detail.module';
+import { MatButtonModule } from '@angular/material/button';
 
 describe('BookComponent', () => {
   let renderResult: RenderResult<BookComponent>;
@@ -23,6 +24,7 @@ describe('BookComponent', () => {
         LoadingModule,
         LoginDetailModule,
         RouterTestingModule,
+        MatButtonModule,
       ],
       providers: [provideMockStore({})],
     });

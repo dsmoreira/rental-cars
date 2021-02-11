@@ -12,3 +12,8 @@ export const selectRental = createSelector(
   selectCheckout,
   (checkout: CheckoutState): Rental => checkout.rental
 );
+
+export const selectLoading = createSelector(
+  selectCheckout,
+  (checkout: CheckoutState): boolean => checkout.loading
+);

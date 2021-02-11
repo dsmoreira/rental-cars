@@ -13,7 +13,7 @@ export class CheckoutService {
 
   constructor(public httpCliente: HttpClient) {}
 
-  save(rental: Rental): Observable<any> {
+  save(rental: Rental, userId: string): Observable<any> {
     const book: Book = {
       vehicleId: rental.vehicle?.id as string,
       hours: rental.hours,
@@ -21,6 +21,7 @@ export class CheckoutService {
       value: rental.value,
       id: this.createGuid(),
       licensePlate: this.createLicensePlate(),
+      userId,
     };
     return this.httpCliente.post<any>(`${this.apiUrl}/books`, book);
   }

@@ -71,9 +71,18 @@ const checkoutReducer = createReducer(
     ...state,
     rental: { ...inicialRental },
   })),
+  on(CheckoutActions.saveRental, (state) => ({
+    ...state,
+    loading: true,
+  })),
+  on(CheckoutActions.saveRentalError, (state) => ({
+    ...state,
+    loading: false,
+  })),
   on(CheckoutActions.saveRentalSuccess, (state) => ({
     ...state,
     rental: { ...inicialRental },
+    loading: false,
   }))
 );
 

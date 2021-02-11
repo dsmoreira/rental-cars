@@ -17,6 +17,8 @@ import { Vehicle } from '../../../home/store/models/vehicle';
 import { vehicles } from '../../../../../../__mocks__/DbMock';
 import { NotifierModule } from 'angular-notifier';
 
+import moment from 'moment';
+
 const vehicle: Vehicle = vehicles[0];
 const diffVehicle: Vehicle = vehicles[1];
 
@@ -41,7 +43,7 @@ const rental: Rental = {
   vehicle,
   hours: 5,
   value: 5 * vehicle.hourlyValue,
-  date: new Date(Date.now()),
+  date: moment(),
 };
 
 describe('CheckoutEffects', () => {
@@ -234,7 +236,7 @@ describe('CheckoutEffects', () => {
     });
   });
 
-  it('ao salvar a aluguel e não estiver logado deve ser direcionado para a tela de login', (done) => {
+  it('ao salvar o aluguel e não estiver logado deve ser direcionado para a tela de login', (done) => {
     store.setState({
       ...initialState,
       auth: {
@@ -253,12 +255,13 @@ describe('CheckoutEffects', () => {
     });
   });
 
-  it('ao salvar a aluguel e estiver logado deve chamar o serviço para salvar o alguel', (done) => {
+  it('ao salvar o aluguel e estiver logado deve chamar o serviço para salvar o alguel', (done) => {
     store.setState({
       ...initialState,
       auth: {
         token: 'token_teste',
         name: 'Daniel Silva Moreira',
+        userId: 'teste',
       },
     });
 
@@ -276,6 +279,7 @@ describe('CheckoutEffects', () => {
       auth: {
         token: 'token_teste',
         name: 'Daniel Silva Moreira',
+        userId: 'teste',
       },
     });
 
@@ -295,6 +299,7 @@ describe('CheckoutEffects', () => {
       auth: {
         token: 'token_teste',
         name: 'Daniel Silva Moreira',
+        userId: 'teste',
       },
     });
 

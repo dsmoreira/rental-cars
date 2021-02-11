@@ -1,4 +1,5 @@
 import { ComponentFixture } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore } from '@ngrx/store/testing';
@@ -12,7 +13,7 @@ describe('LoginDetailComponent', () => {
 
   beforeEach(async () => {
     renderResult = await render(LoginDetailComponent, {
-      imports: [BrowserModule, RouterTestingModule],
+      imports: [BrowserModule, MatButtonModule, RouterTestingModule],
       providers: [provideMockStore({})],
     });
     fixture = renderResult.fixture;

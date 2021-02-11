@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthReducer } from './store/reducers';
 import { BookEffects } from './modules/book/store/effects/book.effects';
+import { BookReducer } from './modules/book/store/reducers';
 import { CheckoutEffects } from './modules/checkout/store/effects/checkout.effects';
 import { CheckoutReducer } from './modules/checkout/store/reducers';
 import { metaReducers } from './store/reducers/storage.metareducer';
@@ -51,6 +52,7 @@ export const MY_DATE_FORMATS = {
     StoreModule.forRoot(
       {
         auth: AuthReducer.reducer,
+        book: BookReducer.reducer,
         checkout: CheckoutReducer.reducer,
         vehicle: VehicleReducer.reducer,
       },

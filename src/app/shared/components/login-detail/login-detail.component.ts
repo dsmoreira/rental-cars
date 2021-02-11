@@ -31,4 +31,8 @@ export class LoginDetailComponent implements OnInit {
   login(): void {
     this.store.dispatch(NavigationActions.navigationGo({ path: ['/login'] }));
   }
+
+  goBooks(): void {
+    this.store.dispatch(NavigationActions.navigationGo({ path: ['/books'] }));
+  }
 }
