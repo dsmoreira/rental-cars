@@ -62,6 +62,7 @@ export class AuthEffects {
       ofType(AuthActions.signup),
       mergeMap(({ user }) =>
         this.authService.signup(user).pipe(
+          take(1),
           map(() => AuthActions.signupSuccess()),
           catchError((error) => {
             return of(AuthActions.signupError({ error: { message: error } }));
@@ -74,6 +75,9 @@ export class AuthEffects {
   signupSuccess$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AuthActions.signupSuccess),
+      tap(() =>
+        this.notificationService.notifySucess('Usuário cadastrado com sucesso!')
+      ),
       map(() => NavigationActions.navigationGo({ path: ['/login'] }))
     );
   });

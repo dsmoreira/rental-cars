@@ -12,6 +12,7 @@ import { vehicles } from '../../../../../../__mocks__/DbMock';
 import { VehicleEffects } from './vehicle.effects';
 import { VehicleActions } from '../actions';
 import { VehicleService } from '../../services/vehicle.service';
+import { NotifierModule } from 'angular-notifier';
 
 describe('VehicleEffects', () => {
   let actions$: Observable<Action>;
@@ -30,6 +31,7 @@ describe('VehicleEffects', () => {
 
   beforeEach(async () => {
     renderResult = await render(DummyTestComponent, {
+      imports: [NotifierModule],
       providers: [
         VehicleEffects,
         provideMockStore(),

@@ -1,0 +1,82 @@
+.signup-close-icon {
+  position: absolute;
+  right: 0;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.signup-wrapper {
+  display: flex;
+
+  & .signup-presentation {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .signup-form-container {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+
+    & .signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & .signup-form-itens {
+        display: flex;
+        flex-wrap: wrap;
+
+        & .signup-name {
+          width: 100%;
+        }
+
+        & .signup-street {
+          width: 50%;
+        }
+
+        & .signup-city {
+          width: 70%;
+        }
+
+        & .signup-password {
+          margin: 1.5rem 0;
+          width: 70%;
+        }
+
+        & > * {
+          flex: 2 1 auto;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-wrapper {
+    flex-direction: column;
+
+    & .signup-presentation {
+      width: 100%;
+      height: 200px;
+    }
+
+    & .signup-form-container {
+      width: 100%;
+      padding: 2rem 0rem;
+
+      & .signup-form {
+        & .signup-form-itens {
+          & > * {
+            padding: 0 2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -94,11 +94,13 @@ describe('NavigationEffects', () => {
     snapshot.url = [new UrlSegment('test', {})];
     snapshot.params = {};
     snapshot.data = {};
-    const routeConfig: Route = {
-      path: 'test',
+    const route = {
+      _routerState: {
+        url: 'test',
+      },
     };
 
-    Object.assign(snapshot, { routeConfig });
+    Object.assign(snapshot, route);
 
     routerEventSubject.next(new ActivationStart(snapshot));
 

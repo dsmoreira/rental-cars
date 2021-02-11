@@ -41,13 +41,13 @@ export class NavigationEffects {
       )
       .subscribe((event: any) => {
         const route = { ...event.snapshot };
-        const { params, queryParams, data, routeConfig } = route;
+        const { params, queryParams, data, _routerState } = route;
 
         const routerState = {
           params,
           queryParams,
           data,
-          path: routeConfig.path,
+          path: _routerState.url,
         };
 
         this.store.dispatch(NavigationActions.navigationPerfomed(routerState));

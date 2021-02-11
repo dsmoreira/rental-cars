@@ -31,6 +31,18 @@ const authReducer = createReducer(
   on(AuthActions.loginError, (state) => ({
     ...state,
     loading: false,
+  })),
+  on(AuthActions.signup, (state) => ({
+    ...state,
+    loading: true,
+  })),
+  on(AuthActions.signupSuccess, (state) => ({
+    ...state,
+    loading: false,
+  })),
+  on(AuthActions.signupError, (state) => ({
+    ...state,
+    loading: false,
   }))
 );
 

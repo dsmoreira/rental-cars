@@ -12,6 +12,7 @@ import { AuthState } from '../../store/reducers/auth.reducer';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 const state: AuthState = {
   name: '',
@@ -43,6 +44,7 @@ describe('LoginComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         ReactiveFormsModule,
+        RouterTestingModule,
       ],
       providers: [provideMockStore({ initialState })],
     });

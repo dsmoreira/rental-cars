@@ -1,1 +1,117 @@
-<p>signup works!</p>
+<app-loading *ngIf="loading$ | async"></app-loading>
+<mat-icon class="signup-close-icon" (click)="returnLogin()">close</mat-icon>
+<div class="signup-wrapper">
+  <div class="signup-presentation background-color-primary">
+    <app-logo></app-logo>
+  </div>
+  <div class="signup-form-container">
+    <form class="signup-form" [formGroup]="newUser">
+      <h2>Faça seu cadastro e alugue seu veículo</h2>
+      <div class="signup-form-itens">
+        <mat-form-field class="signup-name">
+          <input matInput placeholder="Nome" formControlName="name" />
+          <mat-error *ngIf="newUser.controls['name'].hasError('required')">
+            Nome <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="CPF"
+            [validation]="true"
+            formControlName="document"
+            mask="000.000.000-00"
+          />
+          <mat-error *ngIf="newUser.controls['document'].hasError('required')">
+            Cpf <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="newUser.controls['document'].hasError('mask')">
+            Cpf <strong>inválido</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Data de nascimento</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="birthdate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+          <mat-error *ngIf="newUser.controls['birthdate'].hasError('required')">
+            Data de nascimento <strong>obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="CEP"
+            formControlName="zipcode"
+            mask="00000-000"
+          />
+          <mat-error *ngIf="newUser.controls['zipcode'].hasError('required')">
+            CEP <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="signup-street">
+          <input matInput placeholder="Logradouro" formControlName="street" />
+          <mat-error *ngIf="newUser.controls['street'].hasError('required')">
+            Logradouro <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Número"
+            formControlName="number"
+            mask="0*"
+          />
+          <mat-error *ngIf="newUser.controls['number'].hasError('required')">
+            Número <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Complemento"
+            formControlName="complement"
+          />
+        </mat-form-field>
+        <mat-form-field class="signup-city">
+          <input matInput placeholder="Cidade" formControlName="city" />
+          <mat-error *ngIf="newUser.controls['city'].hasError('required')">
+            Cidade <strong>obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Estado" formControlName="state" />
+          <mat-error *ngIf="newUser.controls['state'].hasError('required')">
+            Estado <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="signup-password">
+          <input
+            type="password"
+            matInput
+            placeholder="Senha"
+            formControlName="password"
+          />
+          <mat-error *ngIf="newUser.controls['state'].hasError('password')">
+            Senha <strong>obrigatória</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="signup()"
+        [disabled]="loading$ | async"
+      >
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</div>

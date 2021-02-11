@@ -12,6 +12,7 @@ import { NotificationService } from '../../../../core/services/notification.serv
 import { BookEffects } from './book.effects';
 import { BookActions } from '../actions';
 import { BookService } from '../../services/book.service';
+import { NotifierModule } from 'angular-notifier';
 
 const initialState = {
   checkout: {
@@ -47,6 +48,7 @@ describe('BookEffects', () => {
 
   beforeEach(async () => {
     renderResult = await render(DummyTestComponent, {
+      imports: [NotifierModule],
       providers: [
         BookEffects,
         provideMockStore({

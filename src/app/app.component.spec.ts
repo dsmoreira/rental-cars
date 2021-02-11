@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ComponentFixture } from '@angular/core/testing';
+import { NotifierModule } from 'angular-notifier';
 import { render, RenderResult } from '@testing-library/angular';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -11,7 +12,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     renderResult = await render(AppComponent, {
-      imports: [BrowserModule, RouterTestingModule],
+      imports: [BrowserModule, NotifierModule, RouterTestingModule],
     });
     fixture = renderResult.fixture;
   });

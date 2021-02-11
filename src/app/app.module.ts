@@ -2,7 +2,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
 import { NgModule } from '@angular/core';
+import { NotifierModule } from 'angular-notifier';
 import { StoreModule } from '@ngrx/store';
 
 import { AuthEffects } from './store/effects/auth.effects';
@@ -15,6 +22,14 @@ import { NavigationEffects } from './store/effects/navigation.effects';
 import { VehicleEffects } from './modules/home/store/effects/vehicle.effects';
 import { VehicleReducer } from './modules/home/store/reducers';
 
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+  },
+};
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -27,6 +42,8 @@ import { VehicleReducer } from './modules/home/store/reducers';
       VehicleEffects,
     ]),
     HttpClientModule,
+    MatMomentDateModule,
+    NotifierModule,
     StoreModule.forRoot({
       auth: AuthReducer.reducer,
       checkout: CheckoutReducer.reducer,
@@ -34,7 +51,10 @@ import { VehicleReducer } from './modules/home/store/reducers';
     }),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

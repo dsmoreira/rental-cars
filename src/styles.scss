@@ -1,5 +1,7 @@
+@import "~angular-notifier/styles";
 @import "~@angular/material/theming";
 @import "./themes/palettes.scss";
+@import "./themes/color-classes.scss";
 
 @include mat-core();
 
@@ -18,6 +20,8 @@ $rental-cars-theme: mat-light-theme(
 );
 
 @include angular-material-theme($rental-cars-theme);
+
+@include color-classes-theme($rental-cars-theme);
 
 html,
 body {

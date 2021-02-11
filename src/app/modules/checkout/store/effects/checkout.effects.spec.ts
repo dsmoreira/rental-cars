@@ -15,6 +15,7 @@ import { NotificationService } from '../../../../core/services/notification.serv
 import { Rental } from '../../../checkout/store/models/rental';
 import { Vehicle } from '../../../home/store/models/vehicle';
 import { vehicles } from '../../../../../../__mocks__/DbMock';
+import { NotifierModule } from 'angular-notifier';
 
 const vehicle: Vehicle = vehicles[0];
 const diffVehicle: Vehicle = vehicles[1];
@@ -68,6 +69,7 @@ describe('CheckoutEffects', () => {
 
   beforeEach(async () => {
     renderResult = await render(DummyTestComponent, {
+      imports: [NotifierModule],
       providers: [
         CheckoutEffects,
         provideMockStore({

@@ -13,6 +13,7 @@ import { LoginInfo } from '../models/login-info';
 import { LoginResult } from '../models/login-result';
 import { NotificationService } from '../../core/services/notification.service';
 import { User } from '../models/user';
+import { NotifierModule } from 'angular-notifier';
 
 const loginInfo: LoginInfo = {
   userName: '78296364000',
@@ -61,6 +62,7 @@ describe('AuthEffects', () => {
 
   beforeEach(async () => {
     renderResult = await render(DummyTestComponent, {
+      imports: [NotifierModule],
       providers: [
         AuthEffects,
         provideMockStore({}),

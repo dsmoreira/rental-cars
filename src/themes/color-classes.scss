@@ -1,0 +1,32 @@
+@import "~@angular/material/theming";
+
+@mixin color-classes($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+
+  .color-primary {
+    color: mat-color($primary);
+  }
+
+  .color-accent {
+    color: mat-color($accent);
+  }
+
+  .background-color-primary {
+    background-color: mat-color($primary);
+  }
+
+  .background-color-accent {
+    background-color: mat-color($accent);
+  }
+}
+
+@mixin color-classes-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $typography: mat-get-typography-config($theme);
+
+  @if $color != null {
+    @include color-classes($color);
+  }
+}
